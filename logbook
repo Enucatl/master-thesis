@@ -1,0 +1,67 @@
+2012-02-27  16:27
+Validazione MC:
+scaricate le cose di Sara Vanini, copiate su lxplus
+aggiunto sotto il controllo di cvs UserCode/Abis/TopPartnerValidation
+copiato il file
+/castor/cern.ch/user/a/avetisya/TopPartners/NewSampleTest/PostProc_T53_PairProd_400.lhe.gz
+in ~/scratch0 e spacchettato
+compilato (make) ~/CMGTools/CMSSW_4_2_8_patch7/src/ExRootAnalysis
+trasformati i lhe in root con
+./ExRootLHEFConverter ~/scratch0/PostProc_T53_PairProd_400.lhe ~/scratch0/PostProc_T53_PairProd_400.root
+
+convertito analyseLHE.C in analyseLHE.py
+esegue con warning:
+TClass::TClass:0: RuntimeWarning: no dictionary for class TRootLHEFEvent is available
+TClass::TClass:0: RuntimeWarning: no dictionary for class TRootLHEFParticle is available
+TClass::TClass:0: RuntimeWarning: no dictionary for class TSortableObject is available
+e produce file vuoti? email, intanto commit
+
+2012-02-28  11:26
+Prova con file->MakeProject per creare i dizionari richiesti.
+Scoperto che ritorna false il controllo sulla presenza di esattamente due
+T5/3 quindi nessun evento viene inserito negli istogrammi. Il resto
+funziona. Commit.
+
+sembra che il codice del T53 non sia piu 8000003 ma 8000001.
+Aram conferma.
+
+
+2012-03-01  11:02
+[10.44.00] patriziaazzi: uno degli issues del montecarlo erano i br dei leptoni.
+[10.44.24] patriziaazzi: quindi bisogna guardare distribuzioni di pt, eta, phi per i leptoni generati (e se si puo' io distinguerei da che "branch" vengono).
+[10.44.33] patriziaazzi: e controllare i rapporti dei "sapori".
+[10.44.34] patriziaazzi: e le cariche
+[10.45.08] patriziaazzi: eperche' di solito abbiamo uno dalla catena t->W->lep
+[10.45.18] patriziaazzi: e uno da W ->lep (quella direttamente dal T53)
+[10.45.32] patriziaazzi: ed erano quelli che venivano sbagliati.
+[10.46.00] patriziaazzi: e dato che ci sei sarebbe "simpatico" vedere quante volte c'e' un altro leptone dal decadimento semilep del b del Top.
+[10.46.07] patriziaazzi: ma non so se e' facile da vedere.
+[10.46.15] patriziaazzi: perche' anche quello ci da' un altro possibile SS
+[10.47.33] patriziaazzi: sarebbe interessante vedere uquanti jet ci sono, il pt, eta
+[10.47.34] patriziaazzi: etc
+[10.47.46] patriziaazzi: una volta fatti un po' di plot direi che dovremmo fare uno skype con Aram e controllare.
+
+Grafici da fare:
+pt leptoni
+eta
+phi
+carica elettrica
+pt elettroni da t
+pt elettroni da T
+carica elettrica
+carica elettrica
+eta
+eta
+phi
+phi
+elettroni/muoni da t
+elettroni/tau
+muoni/tau
+elettroni/muoni da T
+elettroni/tau
+muoni/tau
+numero di eventi con decadimento semileptonico del b
+numero di jet
+pt jet
+eta
+phi
