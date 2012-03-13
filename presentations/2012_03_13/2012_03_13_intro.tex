@@ -35,6 +35,24 @@
 
 \begin{frame}
     \frametitle{Validation of the MC samples.}
+    \begin{block}
+        {Signal}
+        two same sign leptons, many jets.
+    \end{block}
+    \begin{figure}[h]
+        \begin{center}
+            \includegraphics[width=.6\textwidth]{production.eps}
+        \end{center}
+    \end{figure}
+    \begin{block}
+        {Cross section, LHC \unit[14]{TeV}}
+    $\sigma = \unit[104]{fb}$ ($M = \unit[500]{GeV}$)\\
+    $\sigma = \unit[1.6]{fb}$ ($M = \unit[1]{TeV}$)
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Validation of the MC samples.}
 \begin{itemize}
     \item bugs in the older samples;
     \item independent crosscheck of LHE files;
@@ -45,8 +63,7 @@
 
 \begin{frame}
     \frametitle{Validation of the MC samples.}
-    \framesubtitle{This is happening as we speak.}
-    from file:
+    \framesubtitle{Work in progress. This is happening as we speak.}
     \url{/castor/cern.ch/user/a/avetisya/TopPartners}\\
     \url{/NewSampleTest/PostProc_T53_PairProd_400.lhe.gz}
     \begin{figure}[h]
@@ -74,9 +91,29 @@
 
 \begin{frame}
     \frametitle{Future enhancements: razor variables.}
+    \begin{block}
+        {Razor variables}
+        A set of variables, dimensionless or with dimensions of a mass,
+        whose distributions contain information about the masses of
+        pair-produced particles. 
+    \end{block}
     \begin{itemize}
         \item already employed in the search for supersymmetric particles;
         \item \alert{asymmetric nature of the event!}
     \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Razor variable example: $M_R$, $M_\Delta$}
+    \begin{itemize}
+        \item $M_R$ peaks near $M_\Delta$ for signal events;
+        \item falls as $\sqrt{\hat{s}}$ for QCD background.
+    \end{itemize}
+    \begin{figure}[h]
+        \begin{center}
+            \includegraphics[width=.3\textwidth]{razor_example.eps}
+            \caption{from C. Rogan, \emph{Kinematical variables towards new
+            dynamics at the LHC. 2011.}}
+        \end{center}
+    \end{figure}
 \end{frame}
 \end{document}
