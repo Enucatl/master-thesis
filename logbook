@@ -71,3 +71,11 @@ i cfg per la fast simulation sono creati in
 444/TopPartnerValidation/python/make_fastsim_cfgs.sh
 
 da questi bisogna creare le PAT+GMG-Tuple da 428p7/TopPartner/prod/patTuple_PF2PAT_forCMG_cfg.py
+
+2012-03-20 09:53
+lanciare job con cmsBatch.py
+
+2012-03-20 17:00
+how to do 	Number of chambers with matched segments > 1  for muons?
+
+submitted all the fastsim jobs
