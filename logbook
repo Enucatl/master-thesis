@@ -79,3 +79,17 @@ lanciare job con cmsBatch.py
 how to do 	Number of chambers with matched segments > 1  for muons?
 
 submitted all the fastsim jobs
+
+2012-03-21 15:03
+rilanciata tutta la fast simulation e le pattuple in 443. Tutto sarà rifatto
+in 443.
+
+check how many jobs were successfully completed:
+find ba* -name STDOUT -exec grep -iH 5000th {} \; | cut -d : -f 1 | uniq | cut -d / -f 1-2  | wc -l
+
+edited CMGTools/Common/Production/python/castorBaseDir.py so that it no
+longer returns a cmst3 path
+
+2012-03-21 18:32
+rilanciati daccapo i job per la fastsim: lo spazio su eos era pieno,
+andavano cancellati tutti.
