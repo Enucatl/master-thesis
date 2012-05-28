@@ -94,6 +94,20 @@ longer returns a cmst3 path
 rilanciati daccapo i job per la fastsim: lo spazio su eos era pieno,
 andavano cancellati tutti.
 
+2012-04-05  14:12
+download file da das con file mover:
+curl --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem https://cmsweb.cern.ch/filemover/download/a173a54429bd9ad97bfddb4a113d0447/ttbsm_42x_mc_100_1_5nQ.root -k -o ttbsm_42x_mc_100_1_5nQ.root
+
+2012-04-13  09:24
+comandi grid:
+lcg-ls srm://t2-srm-02.lnl.infn.it:8443/srm/managerv2?SFN=/pnfs/lnl.infn.it/data/cms/store/user/abis/
+srm-rmdir srm://t2-srm-02.lnl.infn.it:8443/srm/managerv2?SFN=/pnfs/lnl.infn.it/data/cms/store/user/abis/
+
+
+2012-04-17  18:21
+mandare la pattupla per i 42 fastsim su batch:
+cmsBatch.py -o batch_PAT_creation/ -f -r /store/user/abis/42test 1 patTuple_PF2PAT_forCMG_FastSim_550_1_cfg.py
+
 2012-05-28
 81352581 eventi WJets
 https://savannah.cern.ch/task/?26255
