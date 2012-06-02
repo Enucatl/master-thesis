@@ -108,3 +108,6 @@ srm-rmdir srm://t2-srm-02.lnl.infn.it:8443/srm/managerv2?SFN=/pnfs/lnl.infn.it/d
 mandare la pattupla per i 42 fastsim su batch:
 cmsBatch.py -o batch_PAT_creation/ -f -r /store/user/abis/42test 1 patTuple_PF2PAT_forCMG_FastSim_550_1_cfg.py
 
+2012-06-02
+recipe for CMSSW428p7, CMGTools 250.
+
