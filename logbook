@@ -117,5 +117,6 @@ recipe for CMSSW428p7, CMGTools 250.
 
 - Install CMGTools 250 first, see: https://twiki.cern.ch/twiki/bin/viewauth/CMS/CMGToolsReleasesExperimental#Colin_V2_5_0
 - cvs co -d TopPartner UserCode/Abis/TopPartner
+- cvs co -d Susy UserCode/CMG/CMGTools/Susy
 - update CMGTools with files in branch abis_250grid_2Jun12
 - scram b -j4
