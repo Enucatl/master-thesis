@@ -115,3 +115,5 @@ https://savannah.cern.ch/task/?26255
 2012-06-02
 recipe for CMSSW428p7, CMGTools 250.
 
+cvs co -d Susy UserCode/CMG/CMGTools/Susy
+
