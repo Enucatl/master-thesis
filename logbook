@@ -123,3 +123,9 @@ recipe for CMSSW428p7, CMGTools 250.
 - cvs co -d Susy UserCode/CMG/CMGTools/Susy
 - update CMGTools with files in branch abis_250grid_2Jun12
 - scram b -j4
+
+2012-06-05
+python mc_fake_rate.py dataset=/store/user/abis/FakeRate/WJets cutVariable=1
+pattern=*fakeLep*root outputEvery=1000000 >&  fakeRateEle=0.166
+fakeRateEleErr=0.001 fakeRateMu=0.202 fakeRateMuErr=0.001
+parametrization=fake_rate_QCD_cut_0.root >& wjets_cut1_frqcd.log &
