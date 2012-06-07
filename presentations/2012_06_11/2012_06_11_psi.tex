@@ -45,9 +45,9 @@ Top partners into same-sign leptons.}
     \begin{enumerate}
         \item 
     Theory $+$ experiment $\longrightarrow$ force or potential energy.
-    [$\vec{F} = -\vec{\nabla}U(x)$]
+    %[$\vec{F} = -\vec{\nabla}U(x)$]
 \item potential $\rightarrow$ simmetries $\rightarrow$ simple equations
-    $\rightarrow$ happy physicist!
+    $\rightarrow$ happy physicists!
     \end{enumerate}
     \uncover<2->{
     \begin{block}
@@ -93,7 +93,7 @@ Top partners into same-sign leptons.}
                             \item space and time translations;
                             \item space rotations;
                             \item Lorentz boosts: $t^{'} = \dfrac{t -
-                                vx/c^2}{sqrt{1 - v^2/c^2}}$.
+                                vx/c^2}{\sqrt{1 - v^2/c^2}}$.
                         \end{itemize}
                  \end{block}}
 \end{frame}
@@ -107,14 +107,14 @@ Top partners into same-sign leptons.}
 
     What is the most general physical theory compatible with these requirements?
 
-    \uncover<2->{Relativistic mechanics!
-\begin{align*}
-        E &= mc^2\\
-        \frac{dp^\mu}{ds} &= eF^{\mu\nu}u_\nu\\
-        \cdots
-\end{align*}
+    \uncover<2->{
+        \begin{center}
+        \alert{Relativistic mechanics!}
+\begin{equation*}
+        E = mc^2
+\end{equation*}
+        \end{center}
 }
-
     \uncover<3->{Unification of mechanics and electromagnetism, under the
     same simmetry principle.}
 \end{frame}
@@ -128,13 +128,15 @@ Top partners into same-sign leptons.}
     \end{block}
     \begin{enumerate}
         \uncover<1-> {\item symmetry principle. [$SU(3) \times SU(2) \times
-            U(1)$ invariance];
+            U(1)$ invariance]; }
         \uncover<2->{\item particles: what is the universe made of?}
     \end{enumerate}
 
-    %\begin{figure}[h!]
-            %\includegraphics{standard_model_particles_1family}
-    %\end{figure}
+    \begin{figure}[h!]
+        \centering
+        \only<1>{\includegraphics[width=.35\textwidth]{standard_model_particles_1family}}
+        \only<2>{\includegraphics[width=.35\textwidth]{standard_model_particles}}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -142,29 +144,125 @@ Top partners into same-sign leptons.}
     \begin{block}
         {Theory}
         Very few and simple premises, simmetry principles. Unbelievable
-        predicting power.
+        predicting power for all kind of phenomena.
     \end{block}
     \begin{block}
         {Experiment}
-        Its predictions have been confirmed without exceptions to an
-        astonishing degree.
-        \begin{equation*}
-            \dfrac{g_{\text{exp}}}{2} = 1.001 159 652 180 85(76)
-            \dfrac{g_{\text{th}}}{2} = 1.001 159 652 177 60(520)
-        \end{equation*}
+        \begin{align*}
+    g_{\text{exp}}/2 &= 1.001\,159\,652\,180\,85(76)\\
+    g_{\text{th}}/2 &= 1.001\,159\,652\,177\,60(520)
+        \end{align*}
         \begin{itemize}
             \item Incredible experimental precision: less than one part per
                 trillion.
-            \item Unmatched agreement between theory and experiment in the
-                history of science.
+            \item Unmatched agreement between theory and experiment.
         \end{itemize}
     \end{block}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Why do we think there is something beyond the Standard
-    Model}
+    \frametitle{Shortcomings of the Standard Model}
     \framesubtitle{The hierarchy problem}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.35\textwidth]{standard_model_particles}
+    \end{figure}
+    \begin{itemize}
+        \item Why three generations?
+        \item Why this enormous mass difference?
+    \end{itemize}
+    \begin{block}
+        {Nature for the physicist}
+        In order for the theory not to lose its beauty, the quark masses,
+        should be similar. They now span five orders of magnitude!
+    \end{block}
+\end{frame}
 
-\end{frame}<++>
+\begin{frame}
+    \frametitle{Top Partners}
+    \framesubtitle{Extending the Standard Model}
+
+    Many weird difficult mechanisms, different theories. 
+    \begin{block}
+        {Common prediction}
+        New, unknown particles giving part of their mass to the heavy
+        quarks.
+    \end{block}
+    Large masses for a good reason $\longrightarrow$ happy physicists!
+\end{frame}
+
+\begin{frame}
+    \frametitle{The hunt for the top partners}
+    \framesubtitle{We are looking for their murder scene signature}
+    CMS detector at the LHC.
+    \begin{block}
+        {Decay products}
+        \begin{itemize}
+            \item two same-sign electrons or muons;
+            \item many \emph{jets} (at least four);
+            \item large mass $\rightarrow$ large energy.
+        \end{itemize}
+    \end{block}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=.4\textwidth]{toppartner_decay}
+    \end{figure}
+\end{frame}
+
+\section{The CMS detector}
+\begin{frame}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=.7\textwidth]{Schematic}
+    \end{figure}
+    \begin{description}
+        \item[Tracker] silicon detectors for the particle momentum;
+        \item[Calorimeters] scintillators for the energy;
+        \item[$\mu$ detectors] only muons get this far.
+    \end{description}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Signal vs background}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=.4\textwidth]{toppartner_decay}
+    \end{figure}
+    \begin{description}
+        \item[True background:] similar decays from rare Standard Model
+            processes, \emph{e.g.} $t\bar t$.
+        \item[Fake background:] charge misidentification, leptons coming
+            from secondary decays.
+    \end{description}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The data analysis}
+    Signal is extremely small! A handful of events out 
+    of trillions of collisions.
+    \begin{block}
+        {Selections}
+        Find the best variables for signal/background discrimination.\\
+        Careful checks with Monte Carlo simulations.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: $H_T$}
+    \framesubtitle{The momentum of the jets in the event, in a plane
+    perpendicular to the beam line.}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=0.4\textwidth]{ht}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Do the top partners exist?}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=0.4\textwidth]{limit}
+    \end{figure}
+    Excluded at 95\% CL for masses below \unit[655][GeV/$c^2]$.
+\end{frame}
 \end{document}
