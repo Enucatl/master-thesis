@@ -102,6 +102,9 @@ curl --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem https://cmsweb.ce
 comandi grid:
 lcg-ls srm://t2-srm-02.lnl.infn.it:8443/srm/managerv2?SFN=/pnfs/lnl.infn.it/data/cms/store/user/abis/
 srm-rmdir srm://t2-srm-02.lnl.infn.it:8443/srm/managerv2?SFN=/pnfs/lnl.infn.it/data/cms/store/user/abis/
+      lcg-cp -v -b -D srmv2 -n 5 \
+          "srm://srm.ciemat.es:8443/srm/managerv2?SFN=/pnfs/ciemat.es/data/cms/store/user/oglez/myfile" \
+          "srm://srm-eoscms.cern.ch:8443/srm/v2/server?SFN=/eos/cms/store/caf/user/oglez/test/myfile"
 
 
 2012-04-17  18:21
