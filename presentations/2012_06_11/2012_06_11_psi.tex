@@ -7,11 +7,14 @@
 \usepackage{url}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\setbeamertemplate{navigation symbols}{\insertframenumber} 
+%gets rid of bottom navigation bars
 
 \usetheme{Boadilla}
 \usecolortheme{wolverine}
 
+\setbeamertemplate{footline}[page number]{}
+%\setbeamertemplate{navigation symbols}{\insertframenumber} 
+\setbeamertemplate{navigation symbols}{} 
 \graphicspath{{./images/}}
     
 %%% Titolo e autore.
@@ -134,8 +137,8 @@ Top partners into same-sign leptons.}
 
     \begin{figure}[h!]
         \centering
-        \only<1>{\includegraphics[width=.35\textwidth]{standard_model_particles_1family}}
-        \only<2>{\includegraphics[width=.35\textwidth]{standard_model_particles}}
+        \only<2>{\includegraphics[width=.35\textwidth]{standard_model_particles_1family}}
+        \only<3>{\includegraphics[width=.35\textwidth]{standard_model_particles}}
     \end{figure}
 \end{frame}
 
