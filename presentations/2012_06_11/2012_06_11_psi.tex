@@ -12,7 +12,7 @@
 \usetheme{Boadilla}
 \usecolortheme{wolverine}
 
-\setbeamertemplate{footline}[page number]{}
+\setbeamertemplate{footline}[frame number]{}
 %\setbeamertemplate{navigation symbols}{\insertframenumber} 
 \setbeamertemplate{navigation symbols}{} 
 \graphicspath{{./images/}}
@@ -41,6 +41,10 @@ top partners into same-sign leptons.}
 
 \begin{frame}
     \frametitle{Modern physics and the Standard Model}
+    \begin{block}
+        {Simmetry}
+        Let's review it in ``old'' physics first.
+    \end{block}
 \end{frame}
 
 \begin{frame}
@@ -63,11 +67,13 @@ top partners into same-sign leptons.}
         $\longrightarrow U(r) = -\frac{GMm}{r}$.
         \end{figure}
 
-        Depends only on the distance $r$, simmetry under rotations.
-        
-        Angular momentum is constant.
+        \uncover<3->{
+            Depends only on the distance $r$, simmetry under rotations.
 
-        Easy equation, the orbits are ellipses.
+            Angular momentum is constant.
+
+            Easy equation, the orbits are ellipses.
+        }
     \end{block}
 }
 \end{frame}
@@ -117,9 +123,9 @@ top partners into same-sign leptons.}
         E = mc^2
 \end{equation*}
         \end{center}
+    Unification of mechanics and electromagnetism, under the
+    same simmetry principle.
 }
-    \uncover<3->{Unification of mechanics and electromagnetism, under the
-    same simmetry principle.}
 \end{frame}
 
 \begin{frame}
@@ -164,6 +170,32 @@ top partners into same-sign leptons.}
 \end{frame}
 
 \begin{frame}
+    \frametitle{The Large Hadron Collider}
+    \begin{block}
+        {$pp$ collisions}
+    The ultimate test for the Standard Model.
+    \end{block}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.9\textwidth]{lhc}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Compact Muon Solenoid}
+    \framesubtitle{Also known as the CMS detector}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=.7\textwidth]{Schematic}
+    \end{figure}
+    \begin{description}
+        \item[Tracker] silicon detectors for the particle momentum;
+        \item[Calorimeters] scintillators for the energy;
+        \item[$\mu$ detectors] only muons get this far.
+    \end{description}
+\end{frame}
+
+\begin{frame}
     \frametitle{Shortcomings of the Standard Model}
     \framesubtitle{The hierarchy problem}
     \begin{figure}[h!]
@@ -181,10 +213,9 @@ top partners into same-sign leptons.}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Top Partners}
+    \frametitle{Top partners}
     \framesubtitle{Extending the Standard Model}
 
-    Many weird difficult mechanisms, different theories. 
     \begin{block}
         {Common prediction}
         New, unknown particles giving part of their mass to the heavy
@@ -206,32 +237,49 @@ top partners into same-sign leptons.}
     \end{block}
     \begin{figure}[h]
         \centering
-            \includegraphics[width=.5\textwidth]{toppartner_decay}
+            \includegraphics[width=.4\textwidth]{toppartner_decay}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{The CMS detector}
+    \frametitle{Quarks and jets}
+    \framesubtitle{The strong nuclear force and quark confinement}
+\begin{block}
+    {Jet}
+    A group of particles moving in the same direction.\\
+    It is the result of the production of quarks.
+\end{block}
+\uncover<2->{
     \begin{figure}[h]
         \centering
-            \includegraphics[width=.7\textwidth]{Schematic}
+            \includegraphics[height=.35\textheight]{quark_confinement}
     \end{figure}
-    \begin{description}
-        \item[Tracker] silicon detectors for the particle momentum;
-        \item[Calorimeters] scintillators for the energy;
-        \item[$\mu$ detectors] only muons get this far.
-    \end{description}
+    \begin{itemize}
+        \item Force increasing with distance between quarks. Like a spring.
+        \item When energy of the spring $> mc^2$ a new quark is created.
+        \item Quarks are confined in particles with zero net strong charge.
+    \end{itemize}
+}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quarks and jets}
+    \framesubtitle{What you see in the detector}
+    \begin{figure}[h]
+        \centering
+            \includegraphics[width=.6\textwidth]{dijet}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Signal vs background}
     \begin{figure}[h]
         \centering
-            \includegraphics[width=.5\textwidth]{toppartner_decay}
+            \includegraphics[width=.4\textwidth]{toppartner_decay}
     \end{figure}
     \begin{description}
-        \item[True background:] similar decays from rare Standard Model
-            processes, \emph{e.g.} $t\bar t$.
+        \item[True background:] other Standard Model particles decaying in
+            the same way.
         \item[Fake background:] charge misidentification, leptons coming
             from secondary decays.
     \end{description}
@@ -240,7 +288,7 @@ top partners into same-sign leptons.}
 \begin{frame}
     \frametitle{The data analysis}
     Signal is extremely small! A handful of events out 
-    of trillions of collisions.
+    of 40 trillions of collisions.
     \begin{block}
         {Selections}
         Find the best variables for signal/background discrimination.\\
@@ -264,6 +312,7 @@ top partners into same-sign leptons.}
         \centering
             \includegraphics[width=0.4\textwidth]{limit}
     \end{figure}
-    Excluded at 95\% CL for masses below \unit[655][GeV/$c^2]$.
+    Excluded at 95\% CL for masses below \unit[655]{GeV/$c^2}$.
 \end{frame}
+
 \end{document}
