@@ -129,3 +129,19 @@ python mc_fake_rate.py dataset=/store/user/abis/FakeRate/WJets cutVariable=1
 pattern=*fakeLep*root outputEvery=1000000 >&  fakeRateEle=0.166
 fakeRateEleErr=0.001 fakeRateMu=0.202 fakeRateMuErr=0.001
 parametrization=fake_rate_QCD_cut_0.root >& wjets_cut1_frqcd.log &
+
+2012-06-18
+copy from fnal t3:
+
+lcg-cp -v -b -D srmv2 srm://cmssrm.fnal.gov:8443/srm/managerv2?SFN=/11/store/user/lpctlbsm/avetisya/T53/T53T53To2L2Nu_M500_7TeV/avetisya/T53T53To2L2Nu_M-500_TuneZ2_7TeV-madgraph-tauola/ttbsm_v9_Fall11_PU_S6_START42_V14B_v1_T53T53To2L2Nu_M500_7TeV//bf57a985b107a689982b667a3f2f23c7/ttbsm_42x_mc_14_1_5Jh.root ttbsm_42x_mc_14_1_5Jh.root
+
+2012-06-18
+tage prima di adattare la sequenza al TLBSM pattuple:
+abis_250_debugged
+
+2012-06-18
+tag funzionante sulle TLBSM:
+abis_428p7_250_TLBSM_notecuts
+
+(anche per CMGTools)
+
