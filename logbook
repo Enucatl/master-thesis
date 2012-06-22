@@ -202,3 +202,18 @@ abis_428p7_250_TPV1
 
 TAG ready for production with 20 pt skim and everything!
 abis_428p7_250_V1_1
+
+
+wget -O installCMGTools.py "http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/UserCode/CMG/CMGTools/Common/bin/installCMGTools.py?view=co"
+python installCMGTools.py -r CMSSW_4_2_8_patch7 --recipe=exp_V2_5_0
+cd CMGTools/CMSSW_4_2_8_patch7/src
+cvs up -r 1.47 PhysicsTools/PatAlgos/python/tools/tauTools.py
+cvs up -r V08-06-50 PhysicsTools/PatAlgos/python/tools/cmsswVersionTools.py
+chmod +x CMGTools/Production/scripts/*.py
+chmod +x CMGTools/Common/scripts/*.py
+cvs update -r abis_428p7_250_V1_1 CMGTools
+cvs update -r abis_428p7_250_V1_1 AnalysisDataFormats 
+cvs co -r abis_428p7_250_V1_1 -d TopPartner UserCode/Abis/TopPartner
+
+
+scram b -j 4
