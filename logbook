@@ -252,3 +252,8 @@ WJets TTJets
 cmsBatch.py -o skim_WJets -f -r  /store/user/abis/SkimV7/WJets 15 ss_skim_wjets_cfg.py --notagCVS
 
 python -t mc_fake_rate.py dataset=/store/user/abis/SkimV7/WJets cutVariable=7 fakeRateEle=0.150 fakeRateEleErr=0.005 fakeRateMu=0.183 fakeRateMuErr=0.005 2>&1 | tee fake_rate_wjets_ss.log &
+
+2012-07-22 11:50
+latest tag: abis_428p7_250_V8 with new muon track for the pixel measurements
+merge from head to my branch:
+cvs update -j HEAD interface/MuonFactory.h src/MuonFactory.cc ../../AnalysisDataFormats/CMGTools/interface/Muon.h
