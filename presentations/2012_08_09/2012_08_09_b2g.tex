@@ -6,6 +6,7 @@
 \usepackage{units}
 \usepackage{url}
 \usepackage{lmodern}
+\usepackage{booktabs}
 \usepackage[T1]{fontenc}
 %gets rid of bottom navigation bars
 
@@ -16,6 +17,7 @@
 %\setbeamertemplate{navigation symbols}{\insertframenumber} 
 \setbeamertemplate{navigation symbols}{} 
 \graphicspath{{./images/}}
+\include{commands}
     
 %%% Titolo e autore.
 \title[Razor for Top Partners]{Razor variables in the search for Top
@@ -31,4 +33,150 @@ Partners}
   \titlepage
 \end{frame}
  
+\begin{frame}
+    \frametitle{Top Partners}
+    \begin{itemize}
+        \item couple to third generation
+        \item solve hierarchy problem
+            \begin{itemize}
+                \item \emph{Contino, Servant}, JHEP 0806:026 (2008)
+                \item \emph{Mrazek, Wulzer}, Phys. Rev. D81, 075006 (2010)
+            \end{itemize}
+        \item focus on pair production of $T_{5/3}$
+        \item experimental signature: same-sign leptons + jets
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Signal MC}
+    \framesubtitle{Fall11 production}
+    \include{../tables/signal_mc}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Background MC}
+    \framesubtitle{Summer11 production}
+    \include{../tables/signal_mc}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Data}
+    \framesubtitle{2011 golden JSON, \unit[5.0]{$fb^{-1}$}}
+    \include{../tables/data_pd}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Triggers}
+    \include{../tables/triggers}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Event cleanup}
+    \framesubtitle{Standard from TLBSM recipes}
+    \begin{description}
+        \item[scraping:] at least 25\% of the tracks must be high-purity for events
+            with at least ten tracks
+        \item[good primary vertex:] 
+            \begin{itemize}
+                \item at least 4 degrees of freedom
+                \item less than \unit[25]{cm} from interaction point in $z$
+                \item less than \unit[2]{cm} radially
+            \end{itemize}
+        \item[HBHE noise filter] 
+    \end{description}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Electrons}
+    \framesubtitle{Standard top selection, plus charge consistency}
+    \begin{itemize}
+        \item $\pt > \unit[30]{GeV}$
+        \item $|\eta| < 2.4$, except EBEE gap
+        \item HyperTight1MC electron identification
+        \item relative isolation $< 0.15$
+        \item conversion rejection
+        \item transverse impact parameter $< \unit[0.02]{cm}$
+        \item GSF, CFT, ScPix charge consistency
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Muons}
+    \framesubtitle{Standard top selection}
+    \begin{itemize}
+        \item $\pt > \unit[30]{GeV}$
+        \item $|\eta| < 2.4$
+        \item Global and Tracker muon
+        \item relative isolation $< 0.20$
+        \item $\chi^2/\text{NDF} < 10$
+        \item at least one muon hit
+        \item at least one pixel hit
+        \item at least eleven silicon hits
+        \item at least two chambers with matching segments
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Jets}
+    \framesubtitle{Standard top selection}
+    \begin{itemize}
+        \item anti-$k_T$ particle flow jets
+        \item $\pt > \unit[30]{GeV}$
+        \item $|\eta| < 2.4$
+        \item Charged hadron subtractions, L1FastJets corrections,
+            L2L3 jet energy scale corrections
+        \item loose particle flow identification
+        \item $\Delta R(\text{lepton, jet}) > 0.3$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The razor subsystem}
+    \framesubtitle{Rogan, \emph{Kinematical variables towards new dynamics
+    at the LHC}}
+    \begin{block}{The standard razor}
+        Two pair-produced massive particles decaying to a final state with
+        visible particles and \MET
+    \end{block}
+    \alert{Our events do not follow the razor topology, but the leptonic
+    subsystem does!}
+\end{frame}
+
+\begin{frame}
+    \frametitle{$M_R$}
+    \framesubtitle{An indicator of the heavy particle mass scale}
+\end{frame}
+
+\begin{frame}
+    \frametitle{$R$}
+    \framesubtitle{A dimensionless variable related to the \MET}
+    \begin{itemize}
+        \item peaks near 0.5 for signal
+        \item falls of exponentially for backgrounds
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Event reconstruction enhancement and b-tagging}
+    \alert{If two b-tagged CSVL jets are found, the closest in $\Delta R$ to
+    a lepton is associated with the lepton subsystem}
+    \alert{MC truth: improves reconstruction for 2/3 of the signal events}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Selection efficiencies}
+    \framesubtitle{Better signal to noise ratio}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Limit}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusions}
+    \begin{itemize}
+        \item improved rejection of background, particularly $\ttbar$
+    \end{itemize}
+\end{frame}
+
 \end{document}
