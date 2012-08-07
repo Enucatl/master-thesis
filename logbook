@@ -152,26 +152,25 @@ datasets for multicrab submission
 see DAS on cms_dbs_ph_analysis_02
 
 Background:
+(~60 milioni eventi)
+/TTJets_TuneZ2_7TeV-madgraph-tauola/samvel-tlbsm_v9_Summer11-PU_S4_START42_V11-v1_2012_04_23_11_30_29-bf57a985b107a689982b667a3f2f23c7/USER
+(~4 milioni di eventi)
 /TTJets_TuneZ2_7TeV-madgraph-tauola/srappocc-ttbsm_v9_Summer11-PU_S4_START42_V11-v1-bf57a985b107a689982b667a3f2f23c7/USER
-/DYJetsToLL_TuneZ2_M-50_7TeV-madgraph-tauola/meloam-ttbsm_v9tau_DYJetsToLL_TuneZ2_M_50_7TeV_madgraph_tauola_Summer11_PU_S4_START42_V11_v1-a11931220e7d5fb3e17c308819ce0937/USER
+/DYJetsToLL_TuneZ2_M-50_7TeV-madgraph-tauola/mulhearn-mulhearn-ttbsm_DYJetsToLL_TuneZ2_M-50_7TeV-madgraph-tauola_Fall11-a326ba49a16ab761c492392538b61378/USER
 /WJetsToLNu_TuneZ2_7TeV-madgraph-tauola/dstrom-prod_2011_10_05_17_14_11-bf57a985b107a689982b667a3f2f23c7/USER
 
-/T_TuneZ2_s-channel_7TeV-powheg-tauola/meloam-ttbsm_v8_Summer11-PU_S4_START42_V11-v1-b2fdf3a86ce2d334c5e8a1bb8085ae3f/USER
-/T_TuneZ2_t-channel_7TeV-powheg-tauola/lbaeni-ttbsm_v8_Summer11-PU_S4_START42_V11-v1-b2fdf3a86ce2d334c5e8a1bb8085ae3f/USER
-/T_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/meloam-ttbsm_v8_Summer11-PU_S4_START42_V11-v1-b2fdf3a86ce2d334c5e8a1bb8085ae3f/USER
-/Tbar_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/meloam-ttbsm_v8_Summer11-PU_S4_START42_V11-v1-b2fdf3a86ce2d334c5e8a1bb8085ae3f/USER
-/Tbar_TuneZ2_t-channel_7TeV-powheg-tauola/lbaeni-ttbsm_v8_Summer11-PU_S4_START42_V11-v1-b2fdf3a86ce2d334c5e8a1bb8085ae3f/USER
-/Tbar_TuneZ2_s-channel_7TeV-powheg-tauola/weizou-ttbsm_v8_Summer11-PU_S4_-START42_V11-v1-87037ef7c828ea57e128f1ace23a632e/USER
+/T_TuneZ2_t-channel_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_T_t-channel_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
+/T_TuneZ2_s-channel_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_T_s-channel_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
+/T_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_T_tW-channel-DR_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
+/Tbar_TuneZ2_t-channel_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_Tbar_t-channel_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
+/Tbar_TuneZ2_s-channel_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_Tbar_s-channel_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
+/Tbar_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/kalanand-ttbsm_v10beta_Tbar_tW-channel-DR_Fall11-PU_S6_START42_V14B-a326ba49a16ab761c492392538b61378/USER
 
 /TTW_TuneZ2_7TeV-madgraphCMSSW42xPUv2/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1_TTW_7TeV_madgraph_FastSim-d098d859b0aff0d3556ab4a8789a0266/USER
 /TTZ_TuneZ2_7TeV-madgraphCMSSW42xPUv3/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1_TTZ_7TeV_madgraph_FastSim-d098d859b0aff0d3556ab4a8789a0266/USER
 /WWW_TuneZ2_7TeV-madgraphCMSSW42xPUv1/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1_WWW_7TeV_madgraph_FastSim-d098d859b0aff0d3556ab4a8789a0266/USER
 /PhysicsProcesses_WminusWminus_42x_v1/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1_WWm_7TeV_madgraph_FastSim-d098d859b0aff0d3556ab4a8789a0266/USER
 /PhysicsProcesses_WplusWplus_42x_v1/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1_WWp_7TeV_madgraph_FastSim-d098d859b0aff0d3556ab4a8789a0266/USER
-
-WZ, ZZ?
-/WZJetsTo3LNu_TuneZ2_7TeV-madgraph-tauola/avetisya-ttbsm_v9_Summer11_PU_S4_START42_V11_v1-bf57a985b107a689982b667a3f2f23c7/USER
-/WZ_TuneZ2_7TeV_pythia6_tauola/weizou-ttbsm_v9_Summer11-PU_S4_-START42_V11-v1-bf57a985b107a689982b667a3f2f23c7/USER
 
 Signal:
 /T53T53To2L2Nu_M-400_TuneZ2_7TeV-madgraph-tauola/avetisya-ttbsm_v9_Fall11_PU_S6_START42_V14B_v1_T53T53To2L2Nu_M400_7TeV-bf57a985b107a689982b667a3f2f23c7/USER
@@ -257,3 +256,12 @@ python -t mc_fake_rate.py dataset=/store/user/abis/SkimV7/WJets cutVariable=7 fa
 latest tag: abis_428p7_250_V8 with new muon track for the pixel measurements
 merge from head to my branch:
 cvs update -j HEAD interface/MuonFactory.h src/MuonFactory.cc ../../AnalysisDataFormats/CMGTools/interface/Muon.h
+
+
+2012-08-03 17:02
+cvs co -r V00-02-03 StatisticalTools/RooStatsRoutines
+
+per installare limite
+
+2012-08-05 15:13
+tag abis_428p7_250_V8 scarta gli elettroni a meno di dR 0.1 da un muone
