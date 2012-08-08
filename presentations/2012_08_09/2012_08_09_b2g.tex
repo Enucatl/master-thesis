@@ -45,6 +45,12 @@ Partners}
         \item focus on pair production of $\mathrm{T}_{5/3}$
         \item experimental signature: same-sign leptons + jets
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=.5\textheight]{toppartner_decay_top.eps}
+        %\caption{Top Partners into same-sign leptons}
+        %\label{fig:TTbar_feynman}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -74,9 +80,12 @@ Partners}
     \frametitle{Event cleanup}
     \framesubtitle{Standard from TLBSM recipes}
     \begin{description}
-        \item[scraping:] at least 25\% of the tracks must be high-purity for events
+        \item[scraping]\hspace*{\fill}\\
+            \begin{itemize}
+                \item at least 25\% of the tracks must be high-purity for events
             with at least ten tracks
-        \item[good primary vertex:] 
+            \end{itemize}
+        \item[good primary vertex] \hspace*{\fill}\\
             \begin{itemize}
                 \item at least 4 degrees of freedom
                 \item less than \unit[25]{cm} from interaction point in $z$
@@ -131,54 +140,138 @@ Partners}
 \end{frame}
 
 \begin{frame}
+    \frametitle{Same-sign non-prompt background}
+    \framesubtitle{Data-driven estimate, with the ``tight-loose'' method}
+    \begin{itemize}
+        \item details in AN-2010/261, AN-2010/257, AN-2011/258
+        \item define looser lepton selection
+        \item measure the probability that a lepton passing the loose
+            selection also passes the tight one
+        \item estimate the number of non-prompt leptons passing the tight
+            selection
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{The razor subsystem}
     \framesubtitle{Rogan, \emph{Kinematical variables towards new dynamics
     at the LHC}}
     \begin{block}{The standard razor}
-        Two pair-produced massive particles decaying to a final state with
-        visible particles and \met
+        Two pair-produced massive particles, both decaying to a final state with
+        visible particles \emph{and} \met.
     \end{block}
-    \alert{Our events do not follow the razor topology, but the leptonic
-    subsystem does!}
+    \alert{Our events do not follow the razor topology.}
+
+    \uncover<2->{
+        \alert{The leptonic subsystem does!}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height=.5\textheight]{toppartner_decay_top_color.eps}
+        \end{figure}
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hadronic invariant mass}
+    \framesubtitle{The easy part}
+    \begin{block}{}
+        Mass of the sum of the jets in the event.
+    \end{block}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=.7\textwidth]{had_mass_optional_btag_sum.eps}
+        \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{$M_R$}
     \framesubtitle{An indicator of the heavy particle mass scale}
+    \begin{block}{}
+        Peak expected around $M(\mathrm{T}_{5/3})/2$.
+    \end{block}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=.7\textwidth]{mr_optional_btag_sum.eps}
+        \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{$R$}
-    \framesubtitle{A dimensionless variable related to the \met}
+    \framesubtitle{A dimensionless variable related energy to the \met}
     \begin{itemize}
         \item peaks near 0.5 for signal
-        \item falls of exponentially for backgrounds
+        \item falls of exponentially for backgrounds after an endpoint
     \end{itemize}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=.7\textwidth]{r_optional_btag_sum.eps}
+        \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Event reconstruction enhancement and b-tagging}
-
     \alert{If two b-tagged CSVL jets are found, the closest in $\Delta R$ to
     a lepton is associated with the lepton subsystem}
 
     \alert{MC truth: improves reconstruction for 2/3 of the signal events}
+    \includegraphics[height=.5\textheight]{signal_mc_dr_jet_lepton.eps}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Improvements for the $M_R$}
+    \framesubtitle{Without b-tagging}
+        \begin{figure}[h!]
+            \centering
+                \includegraphics[height=.8\textheight]{mr_sum.eps}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Improvements for the $M_R$}
+    \framesubtitle{With b-tagging}
+        \begin{figure}[h!]
+            \centering
+                    \includegraphics[height=.8\textheight]{mr_optional_btag_sum.eps}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{More problems for the event reconstruction}
+    \begin{itemize}
+        \item the double b-tag is inefficient ($\approx 2/3$ on signal)
+        \item wrong lepton close to a jet by chance
+        \item jet energy threshold
+        \item lepton isolation
+        \item $\Delta R > 0.3$ cut
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Selection efficiencies}
-    \framesubtitle{Better signal to noise ratio}
+    \framesubtitle{A better signal to noise ratio}
+    Final razor selection:
+    \begin{itemize}
+        \item at least four jets
+        \item hadronic mass $>\unit[350]{GeV}$
+        \item $M_R > \unit[200]{GeV}$
+        \item $R > 0.2$
+    \end{itemize}
+    \subimport{../../tables/}{selection_efficiencies}
 \end{frame}
 
 \begin{frame}
     \frametitle{Limit}
+    Expected: \unit[658]{GeV} (was \unit[645]{GeV})
+    Observed: \unit[633]{GeV} (was \unit[645]{GeV})
+    \includegraphics[height=.5\textheight]{oLimit_limit_macro_4j_razor_tight_C.eps}
 \end{frame}
 
 \begin{frame}
     \frametitle{Conclusions}
     \begin{itemize}
         \item improved rejection of background, particularly $\ttbar$
+        \item can still be improved in many ways: event reconstruction
+        \item ???
     \end{itemize}
 \end{frame}
-
 \end{document}
