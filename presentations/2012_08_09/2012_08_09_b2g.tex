@@ -8,16 +8,16 @@
 \usepackage{lmodern}
 \usepackage{booktabs}
 \usepackage[T1]{fontenc}
+\usepackage{import}
 %gets rid of bottom navigation bars
 
 \usetheme{Boadilla}
 \usecolortheme{wolverine}
 
 \setbeamertemplate{footline}[frame number]{}
-%\setbeamertemplate{navigation symbols}{\insertframenumber} 
 \setbeamertemplate{navigation symbols}{} 
-\graphicspath{{./images/}}
-\include{commands}
+\graphicspath{{../../images/}}
+\subimport{../../}{commands}
     
 %%% Titolo e autore.
 \title[Razor for Top Partners]{Razor variables in the search for Top
@@ -42,7 +42,7 @@ Partners}
                 \item \emph{Contino, Servant}, JHEP 0806:026 (2008)
                 \item \emph{Mrazek, Wulzer}, Phys. Rev. D81, 075006 (2010)
             \end{itemize}
-        \item focus on pair production of $T_{5/3}$
+        \item focus on pair production of $\mathrm{T}_{5/3}$
         \item experimental signature: same-sign leptons + jets
     \end{itemize}
 \end{frame}
@@ -50,24 +50,24 @@ Partners}
 \begin{frame}
     \frametitle{Signal MC}
     \framesubtitle{Fall11 production}
-    \include{../tables/signal_mc}
+    \subimport{../../tables/}{signal_mc}
 \end{frame}
 
 \begin{frame}
     \frametitle{Background MC}
     \framesubtitle{Summer11 production}
-    \include{../tables/signal_mc}
+    \subimport{../../tables/}{background_mc}
 \end{frame}
 
 \begin{frame}
     \frametitle{Data}
     \framesubtitle{2011 golden JSON, \unit[5.0]{$fb^{-1}$}}
-    \include{../tables/data_pd}
+    \subimport{../../tables/}{data_pd}
 \end{frame}
 
 \begin{frame}
     \frametitle{Triggers}
-    \include{../tables/triggers}
+    \subimport{../../tables/}{triggers}
 \end{frame}
 
 \begin{frame}
@@ -136,7 +136,7 @@ Partners}
     at the LHC}}
     \begin{block}{The standard razor}
         Two pair-produced massive particles decaying to a final state with
-        visible particles and \MET
+        visible particles and \met
     \end{block}
     \alert{Our events do not follow the razor topology, but the leptonic
     subsystem does!}
@@ -149,7 +149,7 @@ Partners}
 
 \begin{frame}
     \frametitle{$R$}
-    \framesubtitle{A dimensionless variable related to the \MET}
+    \framesubtitle{A dimensionless variable related to the \met}
     \begin{itemize}
         \item peaks near 0.5 for signal
         \item falls of exponentially for backgrounds
@@ -158,8 +158,10 @@ Partners}
 
 \begin{frame}
     \frametitle{Event reconstruction enhancement and b-tagging}
+
     \alert{If two b-tagged CSVL jets are found, the closest in $\Delta R$ to
     a lepton is associated with the lepton subsystem}
+
     \alert{MC truth: improves reconstruction for 2/3 of the signal events}
 \end{frame}
 
