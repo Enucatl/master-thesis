@@ -2,6 +2,7 @@
 
 %%% Dichiarazione dei pacchetti standard.
 \usepackage[utf8x]{inputenc}
+\usepackage{subfigure}
 \usepackage{graphicx}    % inclusione graph images (eps)
 \usepackage{units}
 \usepackage{url}
@@ -165,26 +166,50 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
         \item at least four jets
         \item $H_T > \unit[300]{GeV}$
     \end{itemize}
+    Thanks to the whole group of B2G-12-003, still in the approval process.
 \end{frame}
 
 \begin{frame}
-    \frametitle{The razor subsystem}
+    \frametitle{The razor variables}
     \framesubtitle{Rogan, \emph{Kinematical variables towards new dynamics
     at the LHC}, arXiv 1006.2727}
     \begin{block}{The standard razor}
         Two pair-produced massive particles, both decaying to a final state with
-        visible particles \emph{and} \met.
+        one visible particle and \met.
     \end{block}
-    \alert{Our events do not follow the razor topology.}
+    \begin{block}
+        {The simple version}
+        \begin{align*}
+            M_R &= \sqrt{(a^0 - b^0)^2 - (a^3 + b^3)^2} \\
+            M_R^T &= \sqrt{\dfrac{|\vec{m}|}{2} (|\vec{a}_T| + |\vec{b}_T|) 
+            -\dfrac{\vec{m}}{2} \cdot (\vec{a} + \vec{b})}\\
+            R &= M_R^T / M_R
+        \end{align*}
+    \end{block}
+    Notation:
+    \begin{itemize}
+        \item $a^\mu$ and $b^\mu$ are the four momenta of the visible
+            particles
+        \item $\vec{m}$ is the \met
+        \item $\vec{v}_T$ is a vector with the transverse components
+            $(v_x, v_y, 0)$
+    \end{itemize}
+\end{frame}
 
-    \uncover<2->{
-        \alert{The leptonic subsystem does!}
-        \begin{figure}[h]
-            \centering
-            \includegraphics[height=.5\textheight]{standard_razor_susy.eps}
-            \includegraphics[height=.5\textheight]{toppartner_decay_top_color.eps}
-        \end{figure}
-    }
+\begin{frame}
+    \frametitle{Properties of the razor variables}
+    \begin{description}
+        \item[$M_R$] independent of a longitudinal boost, related to the
+            heavy particle mass
+        \item[$R$] another measurement of the scale of the process, in the transverse plane
+    \end{description}
+
+    \begin{block}
+        {Additional corrections}
+        The formulae in this analysis are corrected for the momentum of the
+        system as a whole by boosting the vectors with the sum $\vec{a} + \vec{b} +
+        \vec{m}.$
+    \end{block}
 \end{frame}
 
 \begin{frame}
@@ -213,7 +238,8 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
 
 \begin{frame}
     \frametitle{$R$}
-    \framesubtitle{A dimensionless variable related energy to the \met}
+    \framesubtitle{A dimensionless variable related to the \met}
+    Theory:
     \begin{itemize}
         \item peaks near 0.5 for signal
         \item falls of exponentially for backgrounds after an endpoint
@@ -225,17 +251,32 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Event reconstruction enhancement and b-tagging}
-    \alert{If two b-tagged CSVL jets are found, the closest in $\Delta R$ to
-    a lepton is associated with the lepton subsystem}
-
-    \alert{MC truth: improves reconstruction for 2/3 of the signal events}
+    \frametitle{Improving the variables}
+    One of the b-jets belongs to the leptonic system: can we collect it?
     \begin{figure}[h]
         \centering
         \includegraphics[height=.6\textheight]{signal_mc_dr_jet_lepton.eps}
         \caption{$\Delta R$ between the b-jet and the lepton from the top
             decay. MC truth from the \unit[550]{GeV} mass point.}
     \end{figure}
+    MC suggests it should be the close to one of the leptons.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Event reconstruction enhancement and b-tagging}
+    \begin{block}
+        {Many jets and two leptons}
+        The closest jet-lepton pair is the right one only in $1/3$ of the
+        events.
+    \end{block}
+
+    \uncover<-2>{
+        Improvements with b-tagging:
+    \alert{If two b-tagged CSVL jets are found, the closest in $\Delta R$ to
+    a lepton is associated with the lepton subsystem}
+
+    \alert{MC truth: improves reconstruction for 1/2 of the signal events}
+}
 \end{frame}
 
 \begin{frame}
@@ -257,22 +298,21 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
 \end{frame}
 
 \begin{frame}
-    \frametitle{More problems for the event reconstruction}
+    \frametitle{Future improvements for the event reconstruction}
     \begin{itemize}
-        \item the double b-tag is inefficient ($\approx 2/3$ on signal)
-        \item wrong lepton close to a jet by chance
+        \item the double b-tag is a tough requirement ($\varepsilon \approx 2/3$ on signal)
+        \item wrong lepton close to a b-jet by chance ($\approx 1/3$)
         \item jet energy threshold
-        \item lepton isolation
-        \item $\Delta R > 0.3$ cut
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Selection efficiencies for backgrounds}
     \framesubtitle{A better signal to noise ratio}
-    Final razor selection optimized for $S/\sqrt{B}$:
+    Final razor selection optimized for $S/\sqrt{B}$. The old analysis
+    requires two same-sign leptons, four jets, $H_T$. We are using the razor
+    instead of $H_T$.
     \begin{itemize}
-        \item at least four jets
         \item hadronic mass $>\unit[350]{GeV}$
         \item $M_R > \unit[200]{GeV}$
         \item $R > 0.2$
@@ -289,7 +329,7 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
 \begin{frame}
     \frametitle{Limit}
     \begin{description}
-        \item[Expected:] \unit[658]{GeV} (was \unit[645]{GeV})
+        \item[Expected:] \unit[658]{GeV} (it is \unit[645]{GeV} in AN-11-419)
     \end{description}
     \begin{figure}[h]
         \centering
@@ -302,9 +342,9 @@ S.Lewin, M.Narain, M.Nespolo, S.Vanini\par}
 \begin{frame}
     \frametitle{Conclusions}
     \begin{itemize}
-        \item improved rejection of background, particularly $\ttbar$
-        \item can still be improved in many ways: event reconstruction
-        \item ???
+        \item much improved rejection of background, particularly $\ttbar$
+        \item many areas for improvement in the event reconstruction
+        \item need improved treatment of systematics
     \end{itemize}
 \end{frame}
 
