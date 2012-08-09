@@ -156,6 +156,7 @@ Partners}
     \frametitle{The razor subsystem}
     \framesubtitle{Rogan, \emph{Kinematical variables towards new dynamics
     at the LHC}}
+    Trying to improve on the selection in AN-11-419.
     \begin{block}{The standard razor}
         Two pair-produced massive particles, both decaying to a final state with
         visible particles \emph{and} \met.
@@ -214,7 +215,10 @@ Partners}
     a lepton is associated with the lepton subsystem}
 
     \alert{MC truth: improves reconstruction for 2/3 of the signal events}
-    \includegraphics[height=.5\textheight]{signal_mc_dr_jet_lepton.eps}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=.5\textheight]{signal_mc_dr_jet_lepton.eps}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -247,23 +251,36 @@ Partners}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Selection efficiencies}
+    \frametitle{Selection efficiencies for backgrounds}
     \framesubtitle{A better signal to noise ratio}
-    Final razor selection:
+    Final razor selection optimized for $S/\sqrt{B}$:
     \begin{itemize}
         \item at least four jets
         \item hadronic mass $>\unit[350]{GeV}$
         \item $M_R > \unit[200]{GeV}$
         \item $R > 0.2$
     \end{itemize}
-    \subimport{../../tables/}{selection_efficiencies}
+    \subimport{../../tables/}{background_efficiencies}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Selection efficiencies for signal}
+    \framesubtitle{A better signal to noise ratio}
+    \subimport{../../tables/}{signal_efficiencies}
 \end{frame}
 
 \begin{frame}
     \frametitle{Limit}
-    Expected: \unit[658]{GeV} (was \unit[645]{GeV})
-    Observed: \unit[633]{GeV} (was \unit[645]{GeV})
-    \includegraphics[height=.5\textheight]{oLimit_limit_macro_4j_razor_tight_C.eps}
+    \begin{description}
+        \item[Expected:] \unit[658]{GeV} (was \unit[645]{GeV})
+        \item[Observed:] \unit[633]{GeV} (was \unit[645]{GeV})
+    \end{description}
+    \begin{figure}[h]
+        \centering
+    \includegraphics[height=.7\textheight]{oLimit_limit_macro_4j_razor_tight_C.eps}
+        \caption{95\% CL limit with the RooStats CL95 tool for an event
+        counting experiment.}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
