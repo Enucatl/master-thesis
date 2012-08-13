@@ -60,7 +60,7 @@
 \begin{document}
 \frenchspacing
 \raggedbottom
-\selectlanguage{american} % american ngerman
+%\selectlanguage{american} % american ngerman
 %\renewcommand*{\bibname}{new name}
 %\setbibpreamble{}
 \pagenumbering{roman}
@@ -68,16 +68,16 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
-\include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
-\cleardoublepage\include{FrontBackmatter/Dedication}
-%\cleardoublepage\include{FrontBackmatter/Foreword}
-\cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Publication}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+\include{front_back_matter/DirtyTitlepage}
+\include{front_back_matter/Titlepage}
+\include{front_back_matter/Titleback}
+\cleardoublepage\include{front_back_matter/Dedication}
+%\cleardoublepage\include{front_back_matter/Foreword}
+\cleardoublepage\include{front_back_matter/Abstract}
+\cleardoublepage\include{front_back_matter/Publication}
+\cleardoublepage\include{front_back_matter/Acknowledgments}
 \pagestyle{scrheadings}
-\cleardoublepage\include{FrontBackmatter/Contents}
+\cleardoublepage\include{front_back_matter/Contents}
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -86,18 +86,18 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
 \part{Some Kind of Manual}
-\include{Chapters/Chapter01}
+\include{chapters/Chapter01}
 \cleardoublepage
-\ctparttext{You can put some informational part preamble text here. 
-Illo principalmente su nos. Non message \emph{occidental} angloromanic
-da. Debitas effortio simplificate sia se, auxiliar summarios da que,
-se avantiate publicationes via. Pan in terra summarios, capital
-interlingua se que. Al via multo esser specimen, campo responder que
-da. Le usate medical addresses pro, europa origine sanctificate nos se.}
+%\ctparttext{You can put some informational part preamble text here. 
+%Illo principalmente su nos. Non message \emph{occidental} angloromanic
+%da. Debitas effortio simplificate sia se, auxiliar summarios da que,
+%se avantiate publicationes via. Pan in terra summarios, capital
+%interlingua se que. Al via multo esser specimen, campo responder que
+%da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 \part{The Showcase}
-\include{Chapters/Chapter02}
+\include{chapters/Chapter02}
 %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
-\include{Chapters/Chapter03}
+\include{chapters/Chapter03}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
 % Backmatter
@@ -105,15 +105,15 @@ da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 \appendix
 \cleardoublepage
 \part{Appendix}
-\include{Chapters/Chapter0A}
+\include{chapters/Chapter0A}
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Colophon}
-\cleardoublepage\include{FrontBackmatter/Declaration}
+\cleardoublepage\include{front_back_matter/Bibliography}
+\cleardoublepage\include{front_back_matter/Colophon}
+\cleardoublepage\include{front_back_matter/Declaration}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
 \end{document}
-% ********************************************************************
+    % ********************************************************************
