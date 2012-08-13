@@ -35,6 +35,9 @@
 \setboolean{enable-backrefs}{false} % true false
 % ****************************************************************************************************
 
+%my packages:
+\usepackage{nicefrac}
+\usepackage[tight]{units}
 
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands
@@ -52,7 +55,7 @@
 \newcommand{\myUni}{Universit\`a degli studi di Padova\xspace}
 \newcommand{\myLocation}{Padova\xspace}
 \newcommand{\myTime}{A.A. 2011/2012\xspace}
-%\newcommand{\myVersion}{version 4.0\xspace}
+\newcommand{\myVersion}{version 4.0\xspace}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -76,7 +79,7 @@
 \PassOptionsToPackage{utf8x}{inputenc}	% latin9 (ISO-8859-9) = latin1+"Euro sign"
  \usepackage{inputenc}				
 
-\PassOptionsToPackage{ukenglish}{babel}   % change this to your language(s)
+\PassOptionsToPackage{UKenglish}{babel}   % change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
  \usepackage{babel}					
@@ -146,7 +149,7 @@
 % ********************************************************************
 % Using PDFLaTeX
 % ********************************************************************
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\PassOptionsToPackage{hyperfootnotes=false,pdfpagelabels}{hyperref}
 	\usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
 \pdfadjustspacing=1 
