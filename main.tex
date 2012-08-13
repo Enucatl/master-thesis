@@ -68,16 +68,15 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{front_back_matter/DirtyTitlepage}
-\include{front_back_matter/Titlepage}
-\include{front_back_matter/Titleback}
-\cleardoublepage\include{front_back_matter/Dedication}
+\include{front_back_matter/dirty_title_page}
+\include{front_back_matter/title_page}
+\include{front_back_matter/title_back}
+\cleardoublepage\include{front_back_matter/dedication}
 %\cleardoublepage\include{front_back_matter/Foreword}
-\cleardoublepage\include{front_back_matter/Abstract}
-\cleardoublepage\include{front_back_matter/Publication}
-\cleardoublepage\include{front_back_matter/Acknowledgments}
+\cleardoublepage\include{front_back_matter/abstract}
+\cleardoublepage\include{front_back_matter/acknowledgments}
 \pagestyle{scrheadings}
-\cleardoublepage\include{front_back_matter/Contents}
+\cleardoublepage\include{front_back_matter/contents}
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -85,8 +84,8 @@
 %\setcounter{page}{90}
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
-\part{Some Kind of Manual}
-\include{chapters/Chapter01}
+\part{The theory of Top Partners}
+\include{chapters/top_partner_theory}
 \cleardoublepage
 %\ctparttext{You can put some informational part preamble text here. 
 %Illo principalmente su nos. Non message \emph{occidental} angloromanic
@@ -109,9 +108,7 @@
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{front_back_matter/Bibliography}
-\cleardoublepage\include{front_back_matter/Colophon}
-\cleardoublepage\include{front_back_matter/Declaration}
+\cleardoublepage\include{front_back_matter/bibliography}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
