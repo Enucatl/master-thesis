@@ -265,3 +265,7 @@ per installare limite
 
 2012-08-05 15:13
 tag abis_428p7_250_V8 scarta gli elettroni a meno di dR 0.1 da un muone
+
+2012-08-14 10:23
+for f in *.eps; do epstopdf $f > ../pdf/${f%.eps}.pdf;done
+
