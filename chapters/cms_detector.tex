@@ -55,6 +55,21 @@ the $z$ axis.
 \subsection{Structure of the detector}
 A global view and a transverse section of the detector are shown in
 figures~\ref{fig:cms} and~\ref{fig:cms_transverse}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/cms}
+    \caption{The CMS detector.}
+    \label{fig:cms}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/cms_transverse}
+    \caption{Transverse view of the CMS detector with sample tracks.}
+    \label{fig:cms_transverse}
+\end{figure}
+
 A superconducting solenoid \unit[13.5]{m} and with a diameter of
 \unit[5.9]{m} provides a uniform, axial magnetic field of \unit[3.8]{T}.
 The return field saturates an iron yoke, which consists of five wheels in
@@ -69,9 +84,9 @@ of pixel detectors, allowing exceptional measurements of the impact parameter
 of the particles and secondary vertex reconstruction, and ten layers of
 silicon microstrip detectors.
 The tracking system is surrounded by the calorimeters, which cover the
-region with $|eta| < 3$. There is an electromagnetic calorimeter (ECAL),
+region with $|\eta| < 3$. There is an electromagnetic calorimeter (ECAL),
 made of lead tungstate crystals and a brass/scintillator hadron calorimeter
-(HCAL). A forward calorimeter provides additional coverage up to $|eta| <
+(HCAL). A forward calorimeter provides additional coverage up to $|\eta| <
 5$.
 
 \subsection{The tracking system}
@@ -125,6 +140,19 @@ depth of $\unit[23]{cm}$, corresponding to 25 radiation lengths.
 The scintillation light is collected by avalanche photodiodes in the barrel
 and vacuum phototriodes in the endcaps. They have a high gain and are
 insensitive to the magnetic field of the detector.
+
+The energy resolution of the calorimeter has been measured in $\Z
+\rightarrow \E\E$ events from the 2011 data~\cite{CMS-DP-2012-007}, as shown in
+figure~\ref{fig:ecal_resolution}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.48\textwidth]{images/pdf/ecal_barrel_resolution}
+    \includegraphics[width=.48\textwidth]{images/pdf/ecal_endcap_resolution}
+    \caption{Energy resolution of the ECAL as measured in $\Z \rightarrow
+    \E\E$ events in the 2011 data.}
+    \label{fig:ecal_resolution}
+\end{figure}
 
 \subsection{The hadron calorimeter}
 The HCAL surrounds the ECAL and is made of plastic scintillators interleaved with brass layers.
