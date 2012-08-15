@@ -30,10 +30,19 @@ The beams are made of ``bunches'' of protons with a time spacing of
 \unit[75]{ns}.
 
 At four different interaction points, the two proton beams are brought to
-collision where the experiments are located: CMS, ATLAS, LHCb and ALICE.
+collision where the experiments are located: CMS, ATLAS, LHCb and ALICE, as
+shown in figure~\ref{fig:lhc}.
 The first two are general purpose detectors. LHCb is designed for the study
 of CP violation in $\mathrm{b}$ physics, and ALICE for the analysis of the
 quark-gluon plasma produced mainly in heavy ion collisions.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/lhc}
+
+    \caption{A view of the LHC and the four experiments.}
+    \label{fig:lhc}
+\end{figure}
 
 \section{The Compact Muon Solenoid}
 CMS is a general purpose detector based on interlocking cylindrical
@@ -66,7 +75,7 @@ figures~\ref{fig:cms} and~\ref{fig:cms_transverse}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{images/pdf/cms_transverse}
-    \caption{Transverse view of the CMS detector with sample tracks.}
+    \caption{Transverse view of the CMS detector with some examples of tracks.}
     \label{fig:cms_transverse}
 \end{figure}
 
@@ -162,3 +171,38 @@ very good hermeticity: the \emph{hadron outer calorimeter} is placed
 outside  the magnet in order to measure the energy of penetrating hadrons,
 while the \emph{hadron forward calorimeter} extends the coverage up to
 $|\eta| < 5$.
+
+\subsection{The muon detectors}
+The muon system is installed in the return yokes of the magnet. Concentrical
+cylinders cover the barrel region up to $|\eta| < 1.2$, while four disks
+make up the endcap detectors ($|\eta| < 2.4|$). Three kind of gas detectors
+are employed: drift tubes in the barrel, cathode strip chambers id the
+endcaps, and resistive plate chambers in both. This last kind of detector
+has a fast response and is the most important for the trigger.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/cms_muon_system}
+
+    \caption{The layout of the muon detectors.}
+    \label{fig:cms_muon_system}
+\end{figure}
+
+\subsection{The trigger and data acquisition system}
+The design bunch spacing of the LHC is \unit[25]{ns}, \ie
+\unit[40]{MHz}. About 100 interactions per second can be stored, so that
+the trigger has to provide a reduction factor of the order of $10^{5}$.
+The trigger system has two levels of selection: the \emph{level 1} (L1) and
+the \emph{high level trigger}.
+\begin{description}
+    \item[L1] is a hardware trigger, made of processors close to the
+        detector components. It exploits course granularity information from
+        calorimeters and muon chambers to identify electromagnetic clusters,
+        muons, jets and missing $E_t$. Its processing time per event is on
+        the order of a microsecond. It reduces the rate of events to less
+        than \unit[100]{kHz}.
+    \item[HLT] is a software trigger run on a farm of commercial CPUs,
+        and has access to all event data, allowing for precise object
+        reconstruction and energy/momentum evaluation. The HLT processing
+        time is around \unit[0.1]{s} per event.
+\end{description}
