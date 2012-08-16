@@ -97,7 +97,7 @@ centred on the muon track, as illustrated in figure~\ref{fig:muon_isolation}.
     \label{fig:muon_isolation}
 \end{figure}
 
-\subsection{Electron reconstruction}
+\subsection{Electron reconstruction}\label{sec:electron_reco}
 The tracks in CMS are reconstructed assuming that the particle is a muon.
 Coulomb scattering is the dominant effect on muons crossing material and its
 impact is modelled by gaussian fluctuations. This approach fails with
@@ -189,7 +189,7 @@ These are rejected if one of the following occurs:
         in the $yz$ plane.
 \end{description}
 
-\subsection{Jet reconstruction}
+\subsection{Jet reconstruction}\label{sec:jet_reco}
 A quark or gluon produced in the hard scattering process undergoes
 hadronization due to colour confinement. Many hadrons are created, mostly in
 the same direction of the original parton, because of momentum conservation.
@@ -224,12 +224,152 @@ The algorithm then compares $d_{ij}$ and $d_{iB}$ iteratively:
 \end{itemize}
 
 After the jets have been reconstructed, the energy has to be scaled to
-account for possible mismeasurements. The following corrections
+account for possible mismeasurements~\cite{2011JInst...611002C}. The following corrections
 are used in this analysis:
 \begin{description}
     \item[charged hadron subtraction:] charged hadrons originating from a
         secondary vertex are eliminated from the collection of particles
         in the jet reconstruction algorithm
-    \item[Level 1 FastJet correction:] 
-    \item[Level 2 and Level 3 jet energy scale:] <++>
-\end{description}<++>
+    \item[Level 1 correction:]removes the energy coming from pile-up
+        events. In principle this will removes any dataset dependence on luminosity so that the following corrections are applied upon a luminosity independent sample.
+    \item[Level 2 correction:] makes the response independent from
+        $\eta$, by using correction factors determined in dijet events.
+    \item[Level 3 correction:] makes the response independents from the \pt
+        of the jet. The correction factors are calculated from $\Z/\gamma +
+        \text{jets}$ events.
+    \item[L2L3 residual corrections:] are only applied to the data, and not
+        to Monte Carlo samples. This fixes the small differences between the
+        data and Monte Carlo reconstructions, in a \pt and $\eta$ dependent
+        fashion.
+\end{description}
+The same corrections can be applied to the MC and data because of the very
+high quality of the simulation. The residual corrections account for the
+small difference.
+The recommendations from~\cite{an:jetid} are also applied, by selecting jets
+with:
+\begin{itemize}
+    \item neutral hadron fraction $< 0.99$
+    \item charged hadron fraction $< 0.99$
+    \item number of constituents $> 1$
+\end{itemize}
+
+\section{Object selection}
+Signal events in our studies have a clean signature: two clean, isolated,
+same-sign leptons and many jets. To reduce the probability of pions and
+other objects of being wrongly identified as leptons further quality
+requirements are enforced.
+\subsection{Muon selection}
+The muons considered for our analysis have the following properties, mainly
+concerning the quality of the reconstructed track, besides high \pt and
+isolation:
+\begin{itemize}
+    \item $\pt > \unit[30]{GeV}$
+    \item relative isolation $< 0.20$
+    \item $|\eta| < 2.4$
+    \item reconstructed as global and tracker muon
+    \item at least eleven silicon hits
+    \item transverse impact parameter $< \unit[0.02]{cm}$
+    \item normalized $\chi^2 < 10$
+    \item at least one hit in the muon system
+    \item at least one hit in the pixel detectors
+    \item at least two muon chambers whose track segments match
+\end{itemize}
+
+\subsection{Electron selection}
+The selection of electron candidates is more complex due to the high
+material budget in the CMS detector and high magnetic field. More variables are
+needed to achieve good discriminating power against fakes.
+The CMS collaboration studied the following variables for electron
+identification:
+\begin{description}
+    \item[tracker-ECAL matching,] with $\Delta \varphi$, $\Delta \eta$ and
+        $E/p$ between the track reconstructed in the silicon detector and
+        the ECAL energy deposits being compared
+    \item[hadron fraction] $H/E$, where the energy collected in the HCAL
+        directly behind the ECAL cluster is measured
+    \item[cluster shape] in $\eta$
+    \item[impact parameter]  with respect to the primary vertex
+    \item[conversion rejection] with missing hits and partner track
+        matching, as described in paragraph~\ref{sec:electron_reco}
+    \item[isolation] of the electron in the tracker, ECAL and HCAL
+\end{description}
+The algorithm gives as output a selection for each electron candidate for
+nine defined severity levels. In this analysis, the \texttt{HyperTightMC1}
+level is used. The efficiency and fake rate of this selection are shown in
+figures~\ref{fig:hyper_tight_efficiency}
+and~\ref{fig:hyper_tight_fake_rate}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/hyper_tight_efficiency}
+    \caption{Selection efficiency for the various working points, measured
+    in $\Z \rightarrow \E \E$ and $\W \rightarrow \E \Nu$ events. In this
+    analysis the \texttt{HyperTightMC1} selection (light blue squares) is used.}
+    \label{fig:hyper_tight_efficiency}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/hyper_tight_fake_rate}
+    \caption{Selection fake rate for the various working points, measured
+    in QCD dijet events. In this
+    analysis the \texttt{HyperTightMC1} selection (light blue squares) is used.}
+    \label{fig:hyper_tight_fake_rate}
+\end{figure}
+
+Our final electron selection includes:
+\begin{itemize}
+    \item $\pt > \unit[30]{GeV}$
+    \item relative isolation $< 0.15$
+    \item $|\eta| < 2.4$, also excluding the transition region from the
+        barrel to the endcap in the ECAL, with $1.444 < |\eta| < 1.566$.
+    \item \texttt{HyperTightMC1} category
+    \item conversion rejection
+    \item transverse impact parameter $< \unit[0.02]{cm}$
+    \item GSF-CTF-SC charge consistency (see
+        paragraph~\ref{sec:electron_reco})
+    \item $\Delta R > 0.1$ from all muon tracks. It can happen that a muon
+        track matches by chance with an ECAL energy deposit. It is
+        particularly important for the counting of $\E \M$ events that we remove such fakes.
+\end{itemize}
+
+\subsection{Jet selection}
+The jet selection has only few requirement in addition to the baseline
+reconstruction described in~\ref{sec:jet_reco}:
+\begin{itemize}
+    \item $\pt > \unit[30]{GeV}$
+    \item $|\eta| < 2.4$
+    \item $\Delta R > 0.3$ between the jet and the selected leptons, to
+        avoid double counting the leptons as jets.
+\end{itemize}
+
+\subsection{Event cleanup and vertex selection}
+A pre-selection for the events includes some requirements on the quality of
+the overall reconstruction:
+\begin{itemize}
+    \item the event is rejected if the fraction of high-purity tracks if
+        less than \nicefrac{1}{4} in events with at least ten tracks
+    \item at least one primary vertex, with at least four degrees of freedom
+        and $\Delta z < \unit[24]{cm}$, $\Delta r < \unit[2]{cm}$ with
+        respect to the nominal interaction point
+    \item events with high levels of noise in the HCAL are removed
+\end{itemize}
+
+\subsection{Trigger requirements}
+HLT selections are also used in our analysis. Double lepton triggers are
+employed with a relatively high \pt threshold. The triggers used for the
+three decay channels are listed in table~\ref{tab:triggers}.
+\input{tables/triggers}
+
+\section{Event selection}
+The signal selection requires:
+\begin{itemize}
+    \item event cleanup and trigger
+    \item exactly two same-sign leptons, rejecting events with three or more
+        leptons
+    \item quarkonia veto, with the invariant mass of the leptons greater
+        than \unit[20]{GeV}
+    \item \Z veto, with the invariant mass of the \E\E and \M\M pairs not in
+        the 76-106 window. Note that this selection is not needed for \E\M
+        events.
+    \item at least four jets
+\end{itemize}
