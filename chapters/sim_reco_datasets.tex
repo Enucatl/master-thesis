@@ -1,5 +1,5 @@
 \chapter{Simulation, reconstruction and datasets}
-\section{Simulation}
+\section{Simulation}\label{sec:fast_sim}
 Accurate Monte Carlo simulations are needed in order to make sense of the
 data and search for new physics phenomena. The physics of the collisions is
 simulated by the event generators MadGraph~\cite{madgraph} and PYTHIA~\cite{fs:pythia}. Then, the propagation of the particles in the detector has to be worked out.
@@ -360,16 +360,60 @@ employed with a relatively high \pt threshold. The triggers used for the
 three decay channels are listed in table~\ref{tab:triggers}.
 \input{tables/triggers}
 
-\section{Event selection}
-The signal selection requires:
-\begin{itemize}
-    \item event cleanup and trigger
-    \item exactly two same-sign leptons, rejecting events with three or more
-        leptons
-    \item quarkonia veto, with the invariant mass of the leptons greater
-        than \unit[20]{GeV}
-    \item \Z veto, with the invariant mass of the \E\E and \M\M pairs not in
-        the 76-106 window. Note that this selection is not needed for \E\M
-        events.
-    \item at least four jets
-\end{itemize}
+\section{Datasets}
+This analysis used the data recorded in 2011 at the CMS detector,
+corresponding to an integrated luminosity of $\unit[5.0]{fb^{-1}}$ of
+proton-proton collisions at a centre of mass energy of
+$\sqrt{s}=\unit[7]{TeV}$.
+The data is divided into \emph{runs} in which the beam and detector
+conditions are stable. The runs are further divided into
+\emph{lumisections}, corresponding to about \unit[23]{s}.
+
+The CMS collaboration certifies a list of good runs based on the conditions
+of the detector. This work is based on the official list of \emph{golden}
+runs for physics analyses.
+
+To enable the most effective access to CMS data, the data are first split
+into \emph{primary datasets} (PDs). The division into PDs is done based on the trigger decision.
+The datasets used in this analysis are triggered with a pair of leptons and
+they are shown in table~\ref{tab:data_pd}.
+
+\input{tables/data_pd}
+
+\section{Signal Monte Carlo samples}
+The model described in~\ref{sec:top_partner_theory} has been implemented in
+the MadGraph event generators and eight samples corresponing to values of
+the \TP mass from 400 to \unit[750]{GeV} were generated. In these samples,
+two of the same-sign \W bosons arisind from the decay of the top partners
+were forced to decay leptonically. The approximate next-to-next-to-leading
+order cross sections were calculated using HATHOR~\cite{hathor}. The masses,
+cross sections and the number of generated events for the eight mass points
+are listed in table~\ref{tab:signal_mc}. 
+
+\input{tables/signal_mc}
+
+\section{Background Monte Carlo samples}
+Some rare Standard Model processes also produce isolated, same-sign leptons
+in their final state. These include the production of two or more vector
+bosons, $\W\Z$, $\Z\Z$, $\W^\pm\W^\pm$ and $\W\W\W$, and the production of
+a top-antitop pair with an associated vector boson, $\ttbar W$ and
+$\ttbar \Z$. Some of them were not available in the official productions
+from the CMS Collaboration and were privately produced with the Fast
+Simulation of the detector, described in paragraph~\ref{sec:fast_sim}.
+
+The background samples used in this analysis are listed in
+table~\ref{tab:background_mc}.
+
+\input{tables/background_mc}
+
+\section{Monte Carlo pile-up weighting}
+The pile-up in events at the LHC is constantly evolving with the increase in
+instantaneous luminosity at which the machine operates. The simulated events
+are usually produced before the data are collected, therefore they need
+taking into account the measured pile-up conditions in order to
+avoid a systematic bias, as shown in figure~\ref{fig:pile_up}
+
+This is done by calculating a weight for every Monte Carlo event, depending
+on the number of pile-up vertices.
+The weights are calculated so that the pile-up distribution of the Monte
+Carlo matches the distribution measured in the data.
