@@ -188,3 +188,48 @@ These are rejected if one of the following occurs:
         to the partner track: $\theta$ is the angle between the two tracks
         in the $yz$ plane.
 \end{description}
+
+\subsection{Jet reconstruction}
+A quark or gluon produced in the hard scattering process undergoes
+hadronization due to colour confinement. Many hadrons are created, mostly in
+the same direction of the original parton, because of momentum conservation.
+All of these collimated particles form a jet.
+
+However there can be difficulties in collecting all the particles in a jet:
+\begin{itemize}
+    \item two or more jets may overlap, resulting in ambiguities in the assignment of the particles
+    \item particles could be generated with a large momentum relative to the
+        original parton direction, leading to the particle not being counted
+        in the jet
+    \item pile-up and initial state radiation may contribute with additional
+        tracks 
+\end{itemize}
+The anti-$k_T$ algorithm~\cite{antikt} is used for the jet reconstruction. In this
+algorithm the distances between the particles $i$ and $j$ $d_{ij}$ are defined, as well
+as the distance between the $i$th-particle and the beam $d_{iB}$:
+\begin{align*}
+    d_{ij} &= \min(p_{Ti}^{-2}, p_{Tj}^{-2})\dfrac{\Delta_{ij}}{R^2}\\
+    d_{iB} &= p_{Ti}^{-2}
+\end{align*}
+Where $\Delta_{ij}^2 = (y_i - y_j)^2 + (\varphi_i - \varphi_j)^2$, and
+$p_{Ti}$, $y_i$ and $\varphi_i$ are the transverse momentum, rapidity and
+azimuthal angle of the $i$th particle; $R = 0.5$ is a parameter representing a
+typical radius of the jet.
+
+The algorithm then compares $d_{ij}$ and $d_{iB}$ iteratively:
+\begin{itemize}
+    \item if $d_{ij} < d_{iB}$ for some $j$, $i$ and $j$ are merged into the
+        same jet candidate
+    \item if $d_{ij} > d_{iB}$ for all $j$, then $i$ is a jet.
+\end{itemize}
+
+After the jets have been reconstructed, the energy has to be scaled to
+account for possible mismeasurements. The following corrections
+are used in this analysis:
+\begin{description}
+    \item[charged hadron subtraction:] charged hadrons originating from a
+        secondary vertex are eliminated from the collection of particles
+        in the jet reconstruction algorithm
+    \item[Level 1 FastJet correction:] 
+    \item[Level 2 and Level 3 jet energy scale:] <++>
+\end{description}<++>
