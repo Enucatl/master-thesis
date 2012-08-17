@@ -101,7 +101,7 @@ requirement against conversion rejection has to be eliminated as well.
 The relevant quantity is the tight to loose ratio, representing the
 probability that a non-prompt lepton is identified as tight:
 \begin{equation*}
-    f_\Lep = \dfrac{\text{number of tight leptons}}{\text{number of loose
+    f = \dfrac{\text{number of tight leptons}}{\text{number of loose
     leptons}}
 \end{equation*}
 
@@ -254,4 +254,101 @@ calculated in the previous section, within the statistical uncertainties:
     f_\M^{\text{btag}} &= 0.280 \pm 0.003 \text{ (stat.)}
 \end{align*}
 
+\subsection{Prompt ratio approximation}
+The \emph{prompt ratio} $p$ can also be defined as the probability for
+a prompt lepton to pass the tight selection. It can be studied with a tag
+and probe method in Drell-Yan events where the invariant mass of the leptons
+is within \unit[10]{GeV} of the \Z mass. This gives values close to one for
+both electrons ($p_\E = 0.92$) and muons ($p_\M = 0.98$). This efficiency is
+confirmed in Monte Carlo \Z and \W studies.
+
+This justifies our approximation in all of the following formulae, where
+$p_\E = p_\M = 1$ is assumed.
+This allows to simplify the calculation of the non-prompt background, as
+well as the treatment of the uncertainties.
+
 \subsection{Calculation of the expected event yields}
+The measure of the non-prompt rate $f_\Lep$ allows to make a prediction on
+the number of events with non-prompt leptons contaminating our final
+selection.
+
+The idea of the method is best illustrated in the simpler case of single lepton
+events.
+The total number of leptons $N_\Lep$ passing the loose criteria is composed
+of $N_p$ prompt leptons and $N_f$ non-prompt leptons. These numbers are not
+directly measurable but they can be related to the number of leptons where
+no lepton ($N_{t0}$) or one lepton $N_{t1}$ passes the tight selection:
+\begin{align*}
+    N_\Lep &= N_p + N_f = N_{t0} + N_{t1}\\
+    N_{t1} &= N_p + fN_f
+    N_{t0} &= (1 - f) N_f\\
+\end{align*}
+These relations can be easily inverted to obtain $N_p$ and $N_f$, and mostly
+the number of non-prompt leptons passing the tight selection, which is the
+expected number of background events in our final sample:
+\begin{equation*}
+    N_f^\text{pass} = fN_f = \varepsilon N_{t0}
+\end{equation*}
+Where we conveniently introduced the notation:
+\begin{equation*}
+    \varepsilon = \dfrac{f}{1 - f}
+\end{equation*}
+This shows that the number of non-prompt leptons passing the tight cuts is
+expressed as a function of the ones failing the cuts, weighted by
+$\varepsilon$.
+
+This approach can be generalized to our case of dilepton events, 
+in the hypothesis that the probabilities for the two leptons are independent. We will
+first assume that the leptons have the same flavour, \ie they are both
+electrons or muons.
+
+Now the total number of events passing the loose cuts is the sum of three
+contributions: $N_{pp}$ events with two prompt leptons, $N_{fp}$ events with
+one prompt and one non-prompt lepton, $N_{ff}$ with two non-prompt leptons.
+Again, these are related to the measurable numbers of events $N_{tx}$ with
+ $x = 0$, $1$, $2$ leptons passing the tight cuts, the remaining ones
+ failing these cuts.
+\begin{align*}
+    N &= N_{ff} + N_{fp} + N_{pp} = N_{t0} + N_{t1} + N_{t2}\\
+    N_{t0} &= (1 - f)^2 N_{ff}\\
+    N_{t1} &= (1 - f) N_{fp} + 2f(1 - f)N_{ff}\\
+    N_{t2} &= fN_{fp} + f^2N_{ff}
+\end{align*}
+The matrix of these linear equations can be inverted, and again with the
+same procedure illustrated for the single lepton case, we get the number of
+events with one non-prompt and two non-prompt leptons for our final
+selection:
+\begin{align*}
+    N_{fp}^\text{pass} = \varepsilon N_{t1} - 2 \varepsilon^{2} N_{t0}\\
+    N_{ff}^\text{pass} = \varepsilon^2 N_{t0}
+\end{align*}
+As in the single lepton case, failing leptons get a weight $\varepsilon$,
+prompt passing leptons get a weight $1$.
+For the mixed case of $N_{fp}$, in case both leptons fail, each of them is
+weighted alternatively by $\varepsilon$, the other by $1$, hence the factor
+2. 
+
+Finally these formulae can be extended to the include the situation where an
+electron and a muon are part of the same configuration.
+The notation is now $N_{pp}$, $N_{fp}$, $N_{pf}$ and $N_{ff}$, where the
+first subscript refers to the electron, the second one to the muon. The
+numbers of events passing and failing the selections is written as
+$N_{txy}$, with $x$ giving the number of electrons passing the tight cuts
+and $y$ giving the number for muons.
+
+The basic equations are then:
+\begin{align*}
+    N_{t00} &= (1 - f_\E)(1 - f_\M) N_{ff}\\
+    N_{t01} &= (1 - f_\E)N_{fp} + (1 - f_\E)f_\M N_{ff}\\
+    N_{t10} &= (1 - f_\M)N_{pf} + (1 - f_\M)f_\E N_{ff}\\
+    N_{t11} &= N_{pp} + f_\M N_{pf} + f_\E N_{fp} + f_\E f_\M N_{ff}
+\end{align*}
+From those, the number for the background yields can be extracted with the
+usual technique:
+\begin{align*}
+    N_{pf}^\text{pass} &= \varepsilon_\M N_{t10} - \varepsilon_\E
+    \varepsilon_\M N_{t00}\\
+    N_{fp}^\text{pass} &= \varepsilon_\E N_{t01} -
+    \varepsilon_\E \varepsilon_\M N_{t00}\\
+    N_{ff}^\text{pass} &= \varepsilon_\E \varepsilon_\M N_{t00}
+\end{align*}
