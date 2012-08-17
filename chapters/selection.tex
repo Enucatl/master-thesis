@@ -1,4 +1,4 @@
-\chapter{Event selection}
+\chapter{Event preselection}
 The experimental signature of our signal is the presence of two same-sign
 prompt leptons and at least four jets (see figure~\ref{fig:TTbar_feynman}).
 
@@ -12,7 +12,7 @@ prompt leptons and at least four jets (see figure~\ref{fig:TTbar_feynman}).
 
 The backgrounds associated with this signal can be divided into three
 categories:
-\begin{description}
+\begin{description}\label{page:background_categories}
     \item[two same-sign prompt leptons] from rare SM processes.
     \item[opposite-sign leptons] whose charge is mismeasured, leading to a
         same-sign final state.
@@ -22,7 +22,8 @@ categories:
         $b$ quark, but is mistaken for a prompt lepton.
 \end{description}
 
-
+In order to reject all of these background sources, the following baseline
+selection is applied:
 \begin{itemize}
     \item event cleanup and trigger
     \item exactly two same-sign leptons, rejecting events with three or more
@@ -30,8 +31,32 @@ categories:
     \item quarkonia veto, with the invariant mass of the leptons greater
         than \unit[20]{GeV}
     \item \Z veto, with the invariant mass of the \E\E and \M\M pairs not in
-        the 76-106 window. Note that this selection is not needed for \E\M
-        events.
+        the 76-106 window. This selection is not needed for \E\M
+        events for lepton number conservation.
     \item at least four jets
 \end{itemize}
+The event cleanup and trigger requirements are detailed
+in~\ref{sec:event_cleanup} and~\ref{sec:triggers}.
+The invariant mass selections are particularly well suited to 
+reject events with charge misidentification, in addition to the charge
+consistency requirement on page~\pageref{page:electron_charge}, particularly from $\Z
+\rightarrow \E\E$ decays or production of light mesons. 
+The distribution of the number of jets in the signal and backgrounds
+(figure~\ref{fig:n_jets}) also
+shows that this is a good discriminating variable against both the
+prompt and the \ttbar backgrounds.
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/pdf/n_jets_sum}
+
+    \caption{Distribution of the number of jets in the backgrounds and
+        signal for the \unit[550]{GeV} mass point for the sum of the three channels:
+    \E\E, \E\M\ and \M\M. The signal is amplified by factor of ten.}
+    \label{fig:n_jets}
+\end{figure}
+
+While the prompt same-sign background is modelled by the Monte Carlo, we
+found that a data-driven method is needed for an accurate description of the
+contributions from charge misidentification and non-prompt leptons.
+That is the subject of the following chapter.
