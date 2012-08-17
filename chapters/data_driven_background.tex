@@ -64,3 +64,195 @@ The number of expected same-sign events due to charge misidentification is estim
 full selection, but having oppositely charged leptons. These events are
 multiplied by
 the charge misidentification probability.
+
+\section{Same-sign non-prompt background}
+Non-prompt leptons are the result of the decays of heavy flavour quarks,
+decays in flight or conversions. The description of this background in the
+Monte Carlo samples is unsatisfactory, and a data-driven estimate is needed.
+
+The so called \emph{tight-loose} method is employed. This method defines two
+types of leptons: a \emph{tight} lepton, which is exactly the same as
+in~\ref{sec:muon_selection} and~\ref{sec:electron_selection}, and a
+\emph{loose} lepton, whose selection criteria are relaxed as follows:
+\begin{description}
+    \item[loose electron]\hspace*{\fill}\\
+        \begin{itemize}
+            \item no transverse impact parameter requirements
+            \item no conversion rejection
+            \item relative isolation relaxed from 0.15 to 0.60
+        \end{itemize}
+    \item[loose muon]\hspace*{\fill}\\ 
+        \begin{itemize}
+            \item transverse impact parameter relaxed from
+                \unit[0.02]{cm} to \unit[2]{cm}
+            \item relative isolation relaxed from 0.20 to 0.40
+            \item no requirements on the number of hits in the tracker, nor
+                on the number of muon chambers with matching segments
+            \item normalized $\chi^2 < 50$ instead of 10
+        \end{itemize}
+\end{description}
+These selections are studied to include \eg leptons from heavy flavour
+hadrons: they are usually close to a jet, hence not isolated, and they also
+have a larger impact parameter, as the hadron decays on a much larger
+timescale with respect to a \TP or a top quark.
+Conversion electrons also have to be taken into account, so that the
+requirement against conversion rejection has to be eliminated as well.
+
+The relevant quantity is the tight to loose ratio, representing the
+probability that a non-prompt lepton is identified as tight:
+\begin{equation*}
+    f_\Lep = \dfrac{\text{number of tight leptons}{\text{number of loose
+    leptons}
+\end{equation*}
+
+However, this ratio is close to the probability for a non-prompt lepton to
+pass the tight selection only if it is calculated on a sample where the
+prompt component is negligible. Such a sample can be built from the
+\texttt{SingleMu} and \texttt{DoubleElectron} primary datasets by enforcing
+cuts aiming to reject leptons from \W and \Z bosons:
+\begin{itemize}
+    \item exactly one loose lepton in each event
+    \item at least one jet with $\pt > \unit[40]{GeV}$ and $\Delta R > 1$
+        relative to the lepton
+    \item $\met < \unit[25]{GeV}$
+    \item $\mt < \unit[25]{GeV}$
+    \item extended \Z veto: reject the event if the invariant mass of the
+        lepton and any jet is in the \unit[76-106]{GeV} window
+\end{itemize}
+The \met and \mt selections are meant to exclude the presence of \W bosons,
+and the \Z veto now includes all the jets, as a second lepton can be incorrectly
+identified as a jet.
+
+Even with this selection, the contamination from prompt leptons is still
+fairly large. This can be estimated from the Monte Carlo $\Wjets$ and
+$\Zjets$ samples. The results are shown in
+tables~\ref{tab:FRwMCEl} and~\ref{tab:FRwMCMu}.
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{*4c}
+    \toprule
+ & 	 loose & 	 tight & 	 ratio \\
+ \midrule
+ $\Wjets$ & 	31.6 $\pm$ 0.21 & 	29.3 $\pm$ 0.20 & 	     -     \\
+$\Zjets$ & 	21.9 $\pm$ 0.08 & 	20.4 $\pm$ 0.08 & 	     -     \\
+$\ttbar$ & 	 0.7 $\pm$ 0.01 & 	 0.6 $\pm$ 0.01 & 	     -     \\
+\midrule
+Data & 	 1974 & 	  274 & 	0.138 $\pm$ 0.009 \\
+Data-MC &	1919.8 $\pm$ 44.43 & 	223.7 $\pm$ 16.55 & 	0.117 $\pm$ 0.009 \\
+\bottomrule
+\end{tabular}
+\caption{Tight to loose ratio for electrons in the data and in the MC. The line
+    Data-MC subtracts from the data the prompt lepton contribution due to
+    $\Wjets$, 
+$\Zjets$ and $\ttbar$ from the data.}
+\label{tab:FRwMCEl}
+\end{center}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & 	 loose & 	 tight & 	 ratio \\
+\hline
+$\Wjets$ & 	4505.0 $\pm$ 26.36 & 	4374.8 $\pm$ 25.97 & 	     -     \\
+$\Zjets$ & 	604.0 $\pm$ 4.36 & 	585.8 $\pm$ 4.29 & 	     -     \\
+$\ttbar$ & 	85.5 $\pm$ 1.20 & 	80.4 $\pm$ 1.16 & 	     -     \\
+\hline
+Data & 	33770 & 	12170 & 	0.360 $\pm$ 0.004 \\
+\hline
+Data-MC &	28575.5 $\pm$ 185.70 & 	7129.1 $\pm$ 113.42 & 	0.249 $\pm$ 0.004 \\
+\hline
+\end{tabular}
+\caption{Tight to loose ratio for muons in the data and in the MC. The line
+    Data-MC subtracts from the data the prompt lepton contribution due to
+    $\Wjets$, 
+$\Zjets$ and $\ttbar$ from the data.}
+\label{tab:FRwMCMu}
+\end{center}
+\end{table}
+
+In order to avoid being directly dependent on the MC, we note that the
+contamination from prompt leptons is negligible if we restrict the \pt range
+of the leptons to $\unit[25]{GeV} < \pt < \unit[35]{GeV}$. The overlap of
+this \pt range with that of the signal selection in the analysis ($\pt >
+\unit[30]{GeV}$) is small, but when the tight to loose ratio is corrected
+for the contribution of prompt leptons, it becomes nearly independent from
+the \pt (see figure~\ref{fig:CorFRvsLepPt}).
+\begin{figure}[htb]
+    \centering
+\includegraphics[width=0.49\textwidth]{figures/h_FR_ElPt.pdf} \hfill
+\includegraphics[width=0.49\textwidth]{figures/h_FR_MuPt.pdf} \\ 
+\caption{The corrected fake rate as a function of $\pt$ for electrons (left) and muons (right). The correction is accomplished by subtracting the MC-based 
+         $\W$, $\Z$ and $\ttbar$ contributions from the data.}
+\label{fig:CorFRvsLepPt}
+\end{figure}
+\begin{table}[htb]
+    \centering
+\begin{tabular}{*4c}
+    \toprule
+ & 	 loose & 	 tight & 	 ratio \\
+ \midrule
+$\Wjets$ & 	 7.0 $\pm$ 0.10 & 	 6.2 $\pm$ 0.09 & 	- \\
+$\Zjets$ & 	 8.1 $\pm$ 0.05 & 	 7.2 $\pm$ 0.05 & 	- \\
+$\ttbar$ & 	 0.1 $\pm$ 0.00 & 	 0.1 $\pm$ 0.00 & 	- \\
+\midrule
+Data & 	 1698 & 	  191 & 	0.112 $\pm$ 0.009 \\
+Data-MC &	1682.9 $\pm$ 41.21 & 	177.5 $\pm$ 13.82 & 	0.105 $\pm$ 0.009 \\
+\bottomrule
+\end{tabular}
+\caption{Tight to loose ratio for electrons in the data and in the MC with
+    the $\pt$ range of
+    the electron restricted to the 25-\unit[35]{GeV} range.
+The line Data-MC subtracts the prompt lepton contribution due to $\Wjets$,
+$\Zjets$ and $\ttbar$ from the data.}
+\label{tab:FRwMCEl_Pt2535}
+\end{table}
+
+
+\begin{table}[htb]
+    \centering
+\begin{tabular}{*4c}
+    \toprule
+ & 	 loose & 	 tight & 	 ratio \\
+ \midrule
+$\Wjets$ & 	995.1 $\pm$ 12.37 & 	942.9 $\pm$ 12.03 & 	- \\
+$\Zjets$ & 	355.4 $\pm$ 3.33 & 	339.1 $\pm$ 3.25 & 	- \\
+$\ttbar$ & 	13.9 $\pm$ 0.48 & 	11.8 $\pm$ 0.45 & 	- \\
+\midrule
+Data & 	40479 & 	11536 & 	0.285 $\pm$ 0.003 \\
+Data-MC &	39114.6 $\pm$ 201.60 & 	10242.2 $\pm$ 108.13 & 	0.261 $\pm$ 0.003 \\
+\bottomrule
+\end{tabular}
+\caption{Tight to loose ratio for muons in the data and in the MC with the
+    $\pt$ range of the muon restricted to the 25-\unit[35]{GeV} range. 
+The line Data-MC subtracts the prompt lepton contribution due to $\Wjets$,
+$\Zjets$ and $\ttbar$ from the data.}
+\label{tab:FRwMCMu_Pt2535}
+\end{table}
+
+With this \pt restriction, the contributions from prompt leptons in the MC
+becomes negligible (tables~\ref{tab:FRwMCEl_Pt2535}
+and~\ref{tab:FRwMCMu_Pt2535}), and in the following analysis we use only the values
+from the data:
+\begin{align*}
+    f_\E &= 0.112 \pm 0.009 \text{ stat.}\\
+    f_\M &= 0.285 \pm 0.003 \text{ stat.}
+\end{align*}
+
+\subsection{Heavy flavour content of the samples}
+The samples in which these ratios are measured are selected without any
+requirements on the heavy flavour content. However, a large part of the
+non-prompt background is expected to arise from semileptonic \ttbar. We
+therefore have to check that our prediction is stable with respect to
+variations in the flavour content.
+
+The b-tagging algorithm described in~\ref{sec:btagging} is used to enrich
+our samples of leptons coming from b quarks. This doesn't change the values
+calculated in the previous section, within the statistical uncertainties:
+\begin{align*}
+    f_\E^{\text{btag}} &= 0.120 \pm 0.009 \text{ stat.}\\
+    f_\M^{\text{btag}} &= 0.280 \pm 0.003 \text{ stat.}
+\end{align*}
+
+\subsection{Calculation of the event yields}

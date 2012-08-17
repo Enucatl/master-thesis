@@ -253,12 +253,22 @@ with:
     \item number of constituents $> 1$
 \end{itemize}
 
+\subsubsection{Jet b-tagging}\label{sec:btagging}
+The signal features two b quarks in the final state of each event. Many
+techniques have been developed to identify jets originated by a b quark. In
+this analysis, the \emph{combined secondary
+vertex} algorithm~\cite{CMS-PAS-BTV-09-001} is used. This sophisticated and complex tag exploits all known variables, which can distinguish b from non-b jets. Its goal is to provide optimal b-tag performance, by combining information about impact parameter significance, the secondary vertex and jet kinematics.
+The standard \emph{loose} working point of this algorithm is employed, leading to a
+a probability of a light-flavour jet passing this selection to 10\%,
+as measured on jets with \pt of about \unit[80]{GeV} in QCD Monte Carlo
+events~\cite{CMS-PAS-BTV-11-001}.
+
 \section{Object selection}
 Signal events in our studies have a clean signature: two clean, isolated,
 same-sign leptons and many jets. To reduce the probability of pions and
 other objects of being wrongly identified as leptons further quality
 requirements are enforced.
-\subsection{Muon selection}
+\subsection{Muon selection}\label{sec:muon_selection}
 The muons considered for our analysis have the following properties, mainly
 concerning the quality of the reconstructed track, besides high \pt and
 isolation:
@@ -275,7 +285,7 @@ isolation:
     \item at least two muon chambers whose track segments match
 \end{itemize}
 
-\subsection{Electron selection}
+\subsection{Electron selection}\label{electron_selection}
 The selection of electron candidates is more complex due to the high
 material budget in the CMS detector and high magnetic field. More variables are
 needed to achieve good discriminating power against fakes.
