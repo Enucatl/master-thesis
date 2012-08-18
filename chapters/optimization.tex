@@ -123,10 +123,122 @@ A new approach was sought for solving these problems, and the solution is at
 the same time simple, elegant and powerful.
 The idea is to build a \emph{razor subsystem} containing only the two
 leptons and the two neutrinos. This follows exactly the basic topology
-outlined in~\ref{sec:mr} and~\ref{sec:r} for SUSY events.
-The jets can then be analyzed as a hadronic system. Since this system is, in
-principle, completely reconstructed, we can measure its invariant mass.
+outlined in~\ref{sec:mr} and~\ref{sec:r} for SUSY events, and the $M_R$
+variable is expected to have a peak at half the mass of the \TP.
 
-One more approximation remains, by associating the b-jet from the leptonic decay
+The jets can then be analyzed as a hadronic system. Since this system is, in
+principle, completely reconstructed, we measure its invariant mass.
+
+The hadronic invariant mass and $M_R$ in figures~\ref{fig:had_mass}
+and~\ref{fig:mr_nobtag} show that the discriminating power of these
+variables is already very good. The prediction that the $M_R$ variable peaks
+at half the mass of the \TP is also confirmed. We can also see a
+reconstruction of the mass of the \Z boson in double electron events with
+charge misidentification, again showing the robustness of this method.
+On the contrary, the $R$ variable has a very
+broad distribution.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_sum_0}
+    \caption{Invariant mass of the hadronic system for the three decay
+    channels and their sum. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:had_mass}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_sum_0}
+    \caption{$M_R$ distributions for the three decay channels and their sum. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:mr_nobtag}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/r_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_sum_0}
+    \caption{$R$ distributions for the three decay channels and their sum. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:r_nobtag}
+\end{figure}
+
+\section{Event reconstruction improvement and b-tagging}
+One more approximation remains, that is the association of the b-jet from the leptonic decay
 chain to the hadronic system. We can try to identify this jet and add it to
 the leptonic system, where it belongs.
+From the Monte Carlo information in the signal, we see that this jet is
+usually close to the lepton from the top decay
+(figure~\ref{fig:dr_jet_lepton}).
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=.6\textwidth]{images/pdf/signal_mc_dr_jet_lepton}
+    \caption{$\Delta R$ between the b-jet and the lepton from the top
+        decay. MC truth from the \unit[550]{GeV} mass point.}
+\end{figure}
+This simple $\Delta R$ matching fails for \nicefrac{2}{3} of the
+signal events, mainly because there are two leptons in each event and many
+jets. Therefore, an unrelated jet can get close to a lepton just by chance.
+Moreover, the b-jet is sometimes not reconstructed because it fails to reach the \pt
+threshold (figure~\ref{fig:b_pt}) or it is too close to the lepton itself,
+thus failing the $\Delta R < 0.3$ selection of
+paragraph~\ref{sec:jet_selection}.
+
+The event reconstruction can indeed be improved with the use of the jet
+b-tagging algorithm described in~\ref{sec:btagging}. If two b-tagged jets
+are found in the event, the one with the minimum $\Delta R$ with respect to
+one of the leptons is moved from the hadronic system to the leptonic system.
+The hadronic invariant mass and the razor variables are recalculated
+accordingly by summing the four momentum of the b-jet to the leptons, and
+subtracting it from the hadronic system at the same time.
+If less than two b-tagged jets are found, no association is made.
+The studies on the signal show that this improves the event reconstruction
+for one in two events. The distributions of the invariant mass and the razor
+variables also show an improvement in the background rejection
+(figures~\ref{fig:had_mass_optional_btag}, \ref{fig:mr_optional_btag}
+and~\ref{fig:r_optional_btag}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_optional_btag_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_optional_btag_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_optional_btag_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/had_mass_optional_btag_sum_0}
+    \caption{Invariant mass of the hadronic system for the three decay
+    channels and their sum, with the b-tag correction. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:had_mass_optional_btag}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_optional_btag_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_optional_btag_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_optional_btag_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/mr_optional_btag_sum_0}
+    \caption{$M_R$ distributions for the three decay channels and their sum,
+        with the b-tag correction. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:mr_optional_btag}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/r_optional_btag_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_optional_btag_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_optional_btag_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/r_optional_btag_sum_0}
+    \caption{$R$ distributions for the three decay channels and their sum,
+        with the b-tag correction. Events with two same-sign leptons and at least
+two jets are shown.}
+    \label{fig:r_optional_btag}
+\end{figure}
