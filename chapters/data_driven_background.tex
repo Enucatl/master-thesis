@@ -267,7 +267,8 @@ $p_\E = p_\M = 1$ is assumed.
 This allows to simplify the calculation of the non-prompt background, as
 well as the treatment of the uncertainties.
 
-\subsection{Calculation of the expected event yields}
+\subsection{Calculation of the expected event
+yields}\label{sec:fake_prediction}
 The measure of the non-prompt rate $f_\Lep$ allows to make a prediction on
 the number of events with non-prompt leptons contaminating our final
 selection.
@@ -280,8 +281,8 @@ directly measurable but they can be related to the number of leptons where
 no lepton ($N_{t0}$) or one lepton $N_{t1}$ passes the tight selection:
 \begin{align*}
     N_\Lep &= N_p + N_f = N_{t0} + N_{t1}\\
-    N_{t1} &= N_p + fN_f
-    N_{t0} &= (1 - f) N_f\\
+    N_{t1} &= N_p + fN_f\\
+    N_{t0} &= (1 - f) N_f
 \end{align*}
 These relations can be easily inverted to obtain $N_p$ and $N_f$, and mostly
 the number of non-prompt leptons passing the tight selection, which is the
@@ -319,8 +320,8 @@ same procedure illustrated for the single lepton case, we get the number of
 events with one non-prompt and two non-prompt leptons for our final
 selection:
 \begin{align*}
-    N_{fp}^\text{pass} = \varepsilon N_{t1} - 2 \varepsilon^{2} N_{t0}\\
-    N_{ff}^\text{pass} = \varepsilon^2 N_{t0}
+    N_{fp}^\text{pass} &= \varepsilon N_{t1} - 2 \varepsilon^{2} N_{t0}\\
+    N_{ff}^\text{pass} &= \varepsilon^2 N_{t0}
 \end{align*}
 As in the single lepton case, failing leptons get a weight $\varepsilon$,
 prompt passing leptons get a weight $1$.
@@ -343,8 +344,8 @@ The basic equations are then:
     N_{t10} &= (1 - f_\M)N_{pf} + (1 - f_\M)f_\E N_{ff}\\
     N_{t11} &= N_{pp} + f_\M N_{pf} + f_\E N_{fp} + f_\E f_\M N_{ff}
 \end{align*}
-From those, the number for the background yields can be extracted with the
-usual technique:
+From those, the number for the background expected events can be extracted with the
+now familiar technique:
 \begin{align*}
     N_{pf}^\text{pass} &= \varepsilon_\M N_{t10} - \varepsilon_\E
     \varepsilon_\M N_{t00}\\
@@ -352,3 +353,55 @@ usual technique:
     \varepsilon_\E \varepsilon_\M N_{t00}\\
     N_{ff}^\text{pass} &= \varepsilon_\E \varepsilon_\M N_{t00}
 \end{align*}
+
+\subsection{Closure tests}
+In order to make sure that the method applied for the non-prompt leptonic
+background estimate is sound we have tested it on independent Monte Carlo
+samples. The MC generator information provides the real non-prompt
+contribution to our selection. This number is what we call the
+\emph{observed} number of events for the purposes of this paragraph.
+
+The fake rate was calculated 
+in QCD samples (\texttt{QCD\_Pt-15to3000} for electrons and
+\texttt{QCD\_Pt-20\_MuEnrichedPt-15} for muons), without the cuts on the
+\met and $\mt$,  as there are no vector bosons in the QCD MC:
+\begin{align*}
+    f_{\E} &= 0.091 \pm 0.017\\
+    f_{\M} &= 0.152 \pm 0.002
+\end{align*}
+These numbers differ from the values in the data since the MC does not
+describe accurately the composition of the non-prompt events.
+
+Monte Carlo events are selected with two same-sign leptons, discarding
+events where both leptons are actually prompt, \ie the decay
+product of a \W or \Z boson.
+Therefore all of the dilepton events we observe after
+these selections have at least one non-prompt lepton. The method just
+described in~\ref{sec:fake_prediction} predicts a
+number of \emph{expected} events.
+
+The results are summarized in Table~\ref{tab:ClosureTestsTable}. The $\ttbar$ studies show that the observed yields differ
+from the predicted by -39\% for $\E\E$, -29\% for $\M\M$ and -27\% for
+$\E\M$. Based on these studies, we assign a 50\% systematic
+uncertainty on the estimation of backgrounds due to fake leptons. This is in agreement with the studies done in 
+reference~\cite{Chatrchyan:2011wba}.
+
+\begin{table}
+\centering
+\begin{tabular}{ccc r@{$\pm$}l}
+    \toprule
+ sample & event type & observed & \multicolumn{2}{c}{expected}  \\ 
+ \midrule
+W+jets  & $\E\E$ & 17 & $25.11$ & $6.60$\\ %this is with MC FR 
+  & $\M\M$ & 0 & $0.68$ & $ 0.36$\\
+  & $\E\M$ & 25 & $30.61$ & $8.15$ \\
+  \midrule
+$t\bar t$  & $\E\E$ & 43 & $70.04$ & $15.40$  \\ %this is with MC FR
+  & $\M\M$ & 33 & $46.45$ & $6.48$ \\ 
+  & $\E\M$ & 83 & $114.22$ & $24.53$ \\
+  \bottomrule
+ \end{tabular}
+ \caption{Summary of the closure tests on Monte Carlo samples for events
+ with two same-sign leptons. Statistical errors only.} 
+ \label{tab:ClosureTestsTable} 
+\end{table} 
