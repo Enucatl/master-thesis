@@ -40,7 +40,9 @@ in~\ref{sec:event_cleanup} and~\ref{sec:triggers}.
 The invariant mass selections are particularly well suited to 
 reject events with charge misidentification, in addition to the charge
 consistency requirement on page~\pageref{page:electron_charge}, particularly from $\Z
-\rightarrow \E\E$ decays or production of light mesons. 
+\rightarrow \E\E$ decays. Figure~\ref{fig:lep_mass} clearly shows a peak at
+around the mass of the \Z boson for the double electron channel. The effect
+is much smaller for the muons. 
 The distribution of the number of jets in the signal and backgrounds
 (figure~\ref{fig:n_jets}) also
 shows that this is a good discriminating variable against both the
@@ -48,15 +50,37 @@ prompt and the \ttbar backgrounds.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7\textwidth]{images/pdf/n_jets_sum}
-
-    \caption{Distribution of the number of jets in the backgrounds and
-        signal for the \unit[550]{GeV} mass point for the sum of the three channels:
-    \E\E, \E\M\ and \M\M. The signal is amplified by factor of ten.}
+    \includegraphics[width=.49\textwidth]{images/pdf/n_jets_ee_0}
+    \includegraphics[width=.49\textwidth]{images/pdf/n_jets_emu_0}\\
+    \includegraphics[width=.49\textwidth]{images/pdf/n_jets_mumu_0}
+    \includegraphics[width=.49\textwidth]{images/pdf/n_jets_sum_0}
+    \caption{Events with two same-sign leptons and two jets. Distribution of the number of jets in the backgrounds and
+        signal for the \unit[550]{GeV} mass point for the sum of the three
+        decay channels \E\E, \E\M\ and \M\M, and their sum. The signal is
+    amplified by factor of ten, the data-driven backgrounds for the
+non-prompt and charge misidentification contributions are detailed in
+chapter~\ref{chap:data_driven}. The shaded area includes statistical and
+systematic uncertainties.}
     \label{fig:n_jets}
 \end{figure}
 
-While the prompt same-sign background is modelled by the Monte Carlo, we
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/lep_mass_ee_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/lep_mass_emu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/lep_mass_mumu_0}
+    \includegraphics[width=.7\textwidth]{images/pdf/lep_mass_sum_0}
+    \caption{Events with two same-sign leptons and two jets. Distribution of the invariant mass of the leptons in the backgrounds and
+        signal for the \unit[550]{GeV} mass point for the sum of the three
+        decay channels \E\E, \E\M\ and \M\M, and their sum. The signal is
+    amplified by factor of ten, the data-driven backgrounds for the
+non-prompt and charge misidentification contributions are detailed in
+chapter~\ref{chap:data_driven}. The shaded area includes statistical and
+systematic uncertainties.}
+    \label{fig:lep_mass}
+\end{figure}
+
+While the prompt same-sign background is well modelled by the Monte Carlo, we
 found that a data-driven method is needed for an accurate description of the
 contributions from charge misidentification and non-prompt leptons.
 That is the subject of the following chapter.

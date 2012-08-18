@@ -1,4 +1,4 @@
-\chapter{A data-driven background estimate}
+\chapter{A data-driven background estimate}\label{chap:data_driven}
 We identified three sources of backgrounds
 (page~\pageref{page:background_categories}). The backgrounds from charge
 misidentification and from non-prompt leptons are analysed with data driven
@@ -7,7 +7,8 @@ techniques.
 Standard Model processes with prompt leptons of opposite charge are very
 common at the LHC. They can contribute to the top partners background if the
 charge of one of the leptons is incorrectly measured.
-For muons in the \pt range considered in this analysis, the charge misidenfication rate is extremely small ($10^{-4}-10^{-5}$) and their contribution to the background is
+For muons in the \pt range considered in this analysis, the charge
+misidenfication rate is extremely small ($\approx10^{-5}$) and their contribution to the background is
 negligible~\cite{susy2011}. The magnitude of this contribution due to electrons can be derived from the data by using the \Z boson resonance. 
 The fraction of misidentified leptons is obtained by considering events with two electrons in which the invariant mass of the leptons falls inside the 
 \Z boson mass window: $\unit[76]{GeV}< M(\Lep \Lep) <\unit[106]{GeV}$. These events must pass all cleaning and trigger requirements and the electrons are likewise required to pass all 
@@ -19,7 +20,7 @@ quality cuts, but the selection based on the number of jets. As can be seen in t
     \toprule
                 & total & \ttbar    & $\Z$+jets & $\W$+jets & $\W\Z$ & $\Z\Z$ & \ttbar$\W$ & \ttbar$\Z$   \\
                 \midrule
-                In $\Z$-window & 9.3$\cdot 10^{5}$      & 644       & 9.3$\cdot 10^{5}$      &  35        & 205   &  46.2   & 1.89      & 8.62      \\
+                in $\Z$ window & 9.3$\cdot 10^{5}$      & 644       & 9.3$\cdot 10^{5}$      &  35        & 205   &  46.2   & 1.89      & 8.62      \\
  same-sign      & 1090         & 1.84      & 1050       & 9.97      & 8.9   &  1.02   & 0.62      & 0.20      \\
  \bottomrule
 \end{tabular}
@@ -54,7 +55,7 @@ probability is consistent with the measurement in~\cite{susy2011}.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{images/pdf/ChargeMisID_ZMass.pdf}
+\includegraphics[width=.7\textwidth]{images/pdf/ChargeMisID_ZMass.pdf}
 \caption{The dilepton invariant mass spectrum for electrons in data. The opposite-sign distributions are shown in blue and 
 the same-sign ones are in red. Both distributions are normalized to unit area.}
 \label{fig:ZWindowMassPeak}
@@ -104,7 +105,6 @@ probability that a non-prompt lepton is identified as tight:
     f = \dfrac{\text{number of tight leptons}}{\text{number of loose
     leptons}}
 \end{equation*}
-
 However, this ratio is close to the probability for a non-prompt lepton to
 pass the tight selection only if it is calculated on a sample where the
 prompt component is negligible. Such a sample can be built from the
@@ -182,7 +182,8 @@ the \pt (see figure~\ref{fig:CorFRvsLepPt}).
     \centering
 \includegraphics[width=0.49\textwidth]{images/pdf/h_FR_ElPt} \hfill
 \includegraphics[width=0.49\textwidth]{images/pdf/h_FR_MuPt} \\ 
-\caption{The corrected fake rate as a function of $\pt$ for electrons (left) and muons (right). The correction is accomplished by subtracting the MC-based 
+\caption{The corrected tight to loose ratio, loosely speaking the
+    \emph{fake rate}, as a function of $\pt$ for electrons (left) and muons (right). The correction is accomplished by subtracting the MC-based 
          $\W$, $\Z$ and $\ttbar$ contributions from the data.}
 \label{fig:CorFRvsLepPt}
 \end{figure}
@@ -262,7 +263,7 @@ is within \unit[10]{GeV} of the \Z mass. This gives values close to one for
 both electrons ($p_\E = 0.92$) and muons ($p_\M = 0.98$). This efficiency is
 confirmed in Monte Carlo \Z and \W studies.
 
-This justifies our approximation in all of the following formulae, where
+This justifies the approximation in all of the following formulae, where
 $p_\E = p_\M = 1$ is assumed.
 This allows to simplify the calculation of the non-prompt background, as
 well as the treatment of the uncertainties.

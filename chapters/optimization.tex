@@ -9,7 +9,7 @@ We now introduce the relevant variables, and discuss their application to
 our signal, which requires new techniques with respect to the standard
 treatment of these variables.
 
-\section{The variable $M_R$}
+\section{The variable $M_R$}\label{sec:mr}
 The razor variables were first introduced in the searches for supersymmetric
 particles~\cite{supersimmetry_razor}. The simplest events in these searches
 feature the pair production of two heavy supersymmetric particles. Each of
@@ -19,14 +19,12 @@ detection and gives rise to \met (figure~\ref{fig:standard_razor_susy}).
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7/textwidth]{images/pdf/standard_razor_susy}
-
+    \includegraphics[width=.5\textwidth]{images/pdf/standard_razor_susy}
     \caption{Simple example of a supersymmetric event, with two heavy
     pair-produced SUSY particles, two invisible lightest supersymmetric
 particles and two visible SM particles.}
     \label{fig:standard_razor_susy}
 \end{figure}
-
 In this kind of events, there is an additional, well-motivated approximation
 that can be made. If the mass of the heavy particle is sufficiently large
 relative to the collider energy $\sqrt{s}$, the particles will be mostly
@@ -37,11 +35,98 @@ In this approximation, we can move from the laboratory reference frame to
 the centre-of-mass frame of the pair-produced particles by finding the frame
 where the magnitude of the momenta $\vec a$ and $\vec b$ of the visible particles are equal. This
 frame is called the \emph{R frame}.
-We define the R-frame mass $M_R$ as:
+We define the R-frame mass $M_{R0}$ as:
 \begin{equation*}
-            M_R = \sqrt{(a^0 - b^0)^2 - (a^3 + b^3)^2}
+    M_{R0} \mathop:= \sqrt{(a^0 - b^0)^2 - (a^3 + b^3)^2}
 \end{equation*}
 Where $a^\mu$ and $b^\mu$ are the four momenta of the visible particles, as
 measured in the laboratory frame.
 This quantity is invariant under longitudinal boosts, and has a distribution
-peaked at the value of the massive particle.
+peaked at the value of the massive particle's mass.
+
+It is not invariant under boosts in the transverse plane, but the
+effects of the \pt of the pair-produced particles can be taken into account.
+Introducting the notation $\vec{v}_T = (v_x, v_y, 0)$ for the transverse
+components of any vector $\vec{v}$, $\vec m$ for the vector representing the
+\met, the corrections in~\cite{chris_email}
+can be applied:
+\begin{align*}
+    \vec u \mathop: &= \vec a + \vec b + \vec m\\
+    \vec v \mathop: &= \vec a + \vec b\\
+    M_R^2 &= \dfrac{1}{2}\left\{ M_{R0}^2  - \vec{u}_T \cdot \vec{v}_T 
+    + M_{R0}\sqrt{M_{R0}^2 + \vec{u}_T^2 - 2\vec{u}_T \cdot \vec{v}_T}\right\}
+\end{align*}
+
+\section{The transverse plane and the $R$ variable}\label{sec:r}
+Traditionally, the requirements used to improve the signal to background
+ratio in these processes is large magnitude of the missing transverse
+energy.
+However, by looking at the formula for $M_R$ in the previous section, we see
+that there is additional kinematical information not yet used. That is,
+apart from the small correction for the \pt of the massive particle, the
+quantities in the transverse plane are not used in the calculation of the
+$M_R$ variable.
+
+We then assign half of the measured \met to each escaping particle,
+and define:
+\begin{equation*}
+    M_{R}^T = \sqrt{\dfrac{|\vec{m}|}{2}(|\vec{a}_T| + |\vec{b}_T|) -
+    \dfrac{\vec m}{2}\cdot (\vec{a}_T + \vec{b}_T)}
+\end{equation*}
+This variable is an additional measurement of the scale of the process, that
+uses the information independent of the $M_R$. Finally we form the
+dimensionless $R$ variable as the ratio:
+\begin{equation*}
+    R\mathop:= \dfrac{M_R^T}{M_R}
+\end{equation*}
+For signal processes, the distribution of $R$ peaks near \nicefrac{1}{2}
+since it is the ratio of two measurements of the same scale, while for
+background events it is expected to fall after reaching a maximum for a
+lower value.
+
+The effects of the \pt of the massive particle are taken into account by
+using the same formula for $M_R^T$ but by boosting the vectors $\vec a$,
+$\vec b$ and $\vec m$ by their sum $\vec a + \vec b + \vec m$.
+
+\section{The razor variables for the top partners}
+The top partner event topology is different from the mentioned
+supersymmetric example, as the decay chains of the pair-produced particles
+are different: one of them decays into two leptons and one b-jet, while the
+other one decays into many jets
+(figure~\ref{fig:susy_toppartner_comparison}).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/standard_razor_susy}
+    \includegraphics[width=.7\textwidth]{images/pdf/TTbar_feynman}
+    \caption{Comparison of a simple supersymmetric example
+        with
+    the top partner decay.}
+    \label{fig:susy_toppartner_comparison}
+\end{figure}
+The obvious approach would be to try to build two \emph{pseudoparticles} by
+summing the four momenta of the decay products of each \TP in the event. This was
+done in other SUSY searches for a variety of final states\cite{susy_razor}.
+However, this does not give good results in \TP events for a number of 
+reasons:
+\begin{itemize}
+    \item there is a combinatorial background given by the fact that
+        one of the jets belongs to one particle, and at least four jets to
+        the other particle
+    \item the \met is no longer equally shared by the two decay branches,
+        but should be associated to the branch containing the two leptons
+    \item there is high-quality information from the leptons, which are very
+        well reconstructed at CMS. These kinematical features get smeared by
+        the mixing with the jets, which are more complex and noisier
+        objects
+\end{itemize}
+A new approach was sought for solving these problems, and the solution is at
+the same time simple, elegant and powerful.
+The idea is to build a \emph{razor subsystem} containing only the two
+leptons and the two neutrinos. This follows exactly the basic topology
+outlined in~\ref{sec:mr} and~\ref{sec:r} for SUSY events.
+The jets can then be analyzed as a hadronic system. Since this system is, in
+principle, completely reconstructed, we can measure its invariant mass.
+
+One more approximation remains, by associating the b-jet from the leptonic decay
+chain to the hadronic system. We can try to identify this jet and add it to
+the leptonic system, where it belongs.
