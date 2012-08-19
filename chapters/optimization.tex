@@ -242,3 +242,70 @@ two jets are shown.}
 two jets are shown.}
     \label{fig:r_optional_btag}
 \end{figure}
+
+\section{Final event selection}
+The razor variables of the last section have to be added to the preselection
+described in~\ref{chap:preselection}. There are three variables that can be
+used to select candidate \TP events: the invariant mass of the jets, the
+$M_R$ and $R$ razor variables. The following selections were chosen to
+optimize the ratio\cite{punzi}:
+\begin{equation*}
+    \dfrac{\varepsilon(t)}{a/2 + \sqrt{B(t)}}
+\end{equation*}
+Where $\varepsilon$ is the efficiency of the selection $t$ for the signal,
+$B$ is the number of expected background events, and $a$ is the number of
+sigmas corresponding to a one-sided gaussian test at significance $\alpha =
+95\%$.
+The commonly used $S/\sqrt{B}$ figure is unsuitable for the present search,
+with a very low background, as the expression breaks down for $B\rightarrow
+0$.
+
+The final event selection includes:
+\begin{itemize}
+    \item the event preselection from~\ref{chap:preselection}, with at least
+        four jets and invariant mass of the leptons not in the quarkonia and
+        \Z boson windows.
+    \item invariant mass of the hadronic system greater than
+        \unit[350]{GeV}
+    \item razor $M_R > \unit[200]{GeV}$
+    \item razor $R > 0.2$
+\end{itemize}
+Figures~\ref{fig:nomr}, \ref{fig:nohadmass} and \ref{fig:nor} show the distributions of the invariant mass of the jets,
+$M_R$ and $R$ with all the cuts applied, but the one on the plotted
+variable.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/4jets_AND_mr200_AND_had_mass350/r_optional_btag_0}
+    \caption{Distribution of the $R$ variable for events in the three decay
+        channels, with the final
+    selection applied without the selection on $R$.}
+    \label{fig:nor}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/4jets_AND_r02_AND_had_mass350/mr_optional_btag_0}
+    \caption{Distribution of the $M_R$ variable for events in the three decay
+        channels, with the final
+    selection applied without the selection on $M_R$.}
+    \label{fig:nomr}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/4jets_AND_mr200_AND_r02/had_mass_optional_btag_0}
+    \caption{Distribution of the invariant mass of the jets for events in the three decay
+        channels, with the final
+        selection applied without the selection on $M(\text{jets})$.}
+    \label{fig:nohadmass}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/4jets_AND_r02_AND_had_mass350/mr_optional_btag_0}
+    \caption{Distribution of the $M_R$ variable for events in the three decay
+        channels, with the final
+    selection applied without the selection on $M_R$.}
+    \label{fig:nomr}
+\end{figure}
