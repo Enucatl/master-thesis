@@ -1,1 +1,29 @@
-\chapter{Limit}<++>
+\chapter{Limit}
+The events passing the kinematical selection are compared with expectations
+from Standard Model background sources. The number of expected events from
+the signal Monte Carlo is shown in table~\ref{tab:signal_yields}. The
+backgrounds are compared to the observed event yields in
+table~\ref{tab:background_yields}.
+\input{tables/signal_yields}
+\input{tables/background_yields}
+No significant excess over the SM expectations is observed, and we can set
+lower bounds on the masses of the top partners.
+
+Exclusion limits are computed at the 95\% confidence level for an event
+counting experiment. The event yields from the three decay channels are
+combined when setting the limits. The limit is computed using the CLs method
+and an LHC-style profile likelihood. Poisson statistics are used to model
+the signal and gaussian distributions are used for integrating over nuisance
+parameters. The expected and observed limits are shown in
+figure~\ref{fig:limit}.
+The expected limit is~\unit[658]{GeV}, the observed limit
+is~\unit[633]{GeV}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.9\textwidth]{images/pdf/oLimit_limit_macro_4jets_opt_btag_200_350_02}
+
+    \caption{Observed and expected limits for the production cross sections
+    of the top partners.}
+    \label{fig:limit}
+\end{figure}
