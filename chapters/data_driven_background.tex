@@ -3,7 +3,7 @@ We identified three sources of backgrounds
 (page~\pageref{page:background_categories}). The backgrounds from charge
 misidentification and from non-prompt leptons are analysed with data driven
 techniques.
-\section{Charge misidentification}
+\section{Charge misidentification}\label{sec:charge_misid}
 Standard Model processes with prompt leptons of opposite charge are very
 common at the LHC. They can contribute to the top partners background if the
 charge of one of the leptons is incorrectly measured.
@@ -355,17 +355,16 @@ now familiar technique:
     N_{ff}^\text{pass} &= \varepsilon_\E \varepsilon_\M N_{t00}
 \end{align*}
 
-\subsection{Closure tests}
+\subsection{Closure tests}\label{sec:closure}
 In order to make sure that the method applied for the non-prompt leptonic
 background estimate is sound we have tested it on independent Monte Carlo
 samples. The MC generator information provides the real non-prompt
 contribution to our selection. This number is what we call the
 \emph{observed} number of events for the purposes of this paragraph.
 
-The fake rate was calculated 
-in QCD samples (\texttt{QCD\_Pt-15to3000} for electrons and
-\texttt{QCD\_Pt-20\_MuEnrichedPt-15} for muons), without the cuts on the
-\met and $\mt$,  as there are no vector bosons in the QCD MC:
+The non-prompt ratio for Monte Carlo events was calculated 
+in QCD samples, without the selections on the
+\met and $\mt$,  as there are no vector bosons in the QCD Monte Carlo:
 \begin{align*}
     f_{\E} &= 0.091 \pm 0.017\\
     f_{\M} &= 0.152 \pm 0.002
@@ -406,3 +405,38 @@ $t\bar t$  & $\E\E$ & 43 & $70.04$ & $15.40$  \\ %this is with MC FR
  with two same-sign leptons. Statistical errors only.} 
  \label{tab:ClosureTestsTable} 
 \end{table} 
+
+A comparison between the observed and expected distributions for various
+kinematical variables (figures~\ref{fig:jet_pt}, \ref{fig:lep_pt}
+and~\ref{fig:masses}) also shows good agreement.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_1_sum_1}
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_2_sum_1}
+    \caption{Expected and observed distributions of the \pt of the leading
+    (left) and subleading (right) jet in events with two same-sign leptons
+and two jets. The sum of the three decay channels is shown. }
+    \label{fig:jet_pt}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_1_sum_1}
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_2_sum_1}
+    \caption{Expected and observed distributions of the \pt of the leading
+    (left) and subleading (right) leptons in events with two same-sign leptons
+and two jets. The sum of the three decay channels is shown. }
+    \label{fig:lep_pt}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/had_mass_optional_btag_sum_1}
+    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_mass_sum_1}
+    \caption{Expected and observed distributions of the invariant mass of
+        jets (left) and leptons (right) in events with two same-sign leptons
+        and two jets. The sum of the three decay channels is shown. The \emph{optional b-tag} method for calculating the
+        invariant mass of the jets is described in~\ref{sec:razor_btagging}.}
+    \label{fig:masses}
+\end{figure}

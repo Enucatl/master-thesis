@@ -25,30 +25,25 @@ on the luminosity~\cite{CMS-SMP-12-008}. These systematic uncertainties are summ
 \label{tab:Systematics}
 \end{table}
 
-The jet energy scale (JES) and pile-up uncertainties are calculated by varying the JES and pileup according to the recommended recipes in the samples for which 
-we take the result from Monte Carlo. The effect of these depends on the topology of the sample. The JES and pileup uncertainties for the backgrounds are 
+\section{Monte Carlo systematic}
+The jet energy scale (JES) and pile-up uncertainties are calculated by
+varying the JES and pile-up according to the recommended recipes in the samples for which 
+we take the result from Monte Carlo. The JES and pile-up uncertainties for the backgrounds are 
 summarized in Table~\ref{tab:MConlySystematics}. For the signal points, we
 take the JES and pile-up uncertainties to be the maximum value of these for single
-point. This corresponds to 0.9\% for the JES and 2\% for the pileup. Table~\ref{tab:MConlySystematics} also
+point. This corresponds to 0.9\% for the JES and 2\% for the pile-up. Table~\ref{tab:MConlySystematics} also
 contains the overall normalization uncertainty for each background sample.
+
 The $\W\Z$ and $\Z\Z$ normalization uncertainties are taken from~\cite{CMS-AN-2011-333}. 
 For the rare backgrounds, we assume a normalization uncertainty of 50\%, as
 these processes have never been observed at the LHC or have not been
-measured well. We also include a 50\% uncertainty associated with the
-estimation of the non-prompt lepton background~\ref{sec:closure}
-and a 20\% uncertainty for the charge misidentification. This comes from the
-difference between the expected number of events derived with the method
-described in~\ref{sec:charge_misid} and a more sophisticated $\eta$ dependent estimate. 
-
-The inputs to the calculation of the limits on the $T_{5/3}$ mass affected by the systematic uncertainties are the luminosity, the uncertainty on the signal efficiency 
-and the uncertainty on the total background. The latter is the largest of the three and it is dominated by the 50\% uncertainty associated with the estimation of the 
-non-prompt lepton background and the normalization uncertainty on the rare backgrounds.
+measured well.
 
 \begin{table}[htb]
     \centering
 \begin{tabular}{*4c}
     \toprule
-    sample       &    JES & pile-up & normalization \\
+    sample       &    jet energy & pile-up & normalization \\
     \midrule
 $\W\Z$             & 5.0\%  & 1.8\%  & 17\%    \\
 $\Z\Z$             & 1.1\%  & 0.6\%  & 7.5\% \\
@@ -61,4 +56,31 @@ $\ttbar \Z$       & 3.7\%  & 0.25\% & 50\% \\
 \caption{Systematic uncertainties for backgrounds that are taken from Monte Carlo.}
 \label{tab:MConlySystematics}
 \end{table}
+
+\section{Data-driven background systematics}
+We also include a 50\% uncertainty associated with the
+estimation of the non-prompt lepton background~\ref{sec:closure}
+and a 20\% uncertainty for the charge misidentification. This comes from the
+difference between the expected number of events derived with the method
+described in~\ref{sec:charge_misid} and a more sophisticated $\eta$
+dependent estimate. We can see that the charge misidentification probability
+depends on $\eta$ (figure~\ref{fig:charge_misid_eta}), and is lower in the
+barrel with respect to the endcaps.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/h_MisIDProbvsEta}
+
+    \caption{Charge misidentification probability as a function of the
+    pseudorapidity $\eta$.}
+    \label{fig:charge_misid_eta}
+\end{figure}
+However, given the very small amount of events with charge misidentification
+passing our selections, this contribution to the total uncertainty is small
+as well.
+
+The inputs to the calculation of the limits on the $T_{5/3}$ mass affected by the systematic uncertainties are the luminosity, the uncertainty on the signal efficiency 
+and the uncertainty on the total background. The latter is the largest of
+the three and it is completely dominated by the 50\% uncertainty associated with the estimation of the 
+non-prompt lepton background and the normalization uncertainty on the rare backgrounds.
+
 
