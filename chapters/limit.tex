@@ -8,13 +8,114 @@ table~\ref{tab:background_yields}.
 \input{tables/background_yields}
 No significant excess over the SM expectations is observed, and we can set
 lower bounds on the masses of the top partners.
-
 Exclusion limits are computed at the 95\% confidence level for an event
-counting experiment~\cite{2010acat.confE..57M}. The event yields from the three decay channels are
-combined when setting the limits. The limit is computed using the CLs method
-and an LHC-style profile likelihood. Poisson statistics are used to model
-the signal and gaussian distributions are used for integrating over nuisance
-parameters. The expected and observed limits are shown in
+counting experiment~\cite{2010acat.confE..57M}.
+
+\section{Calculation of the observed limit}
+A modified frequentist method is used at the LHC
+experiments~\cite{ATLAS:1379837}, known as the \CLs method.
+The test statistic and the treatment of nuisance parameters are described in
+this section.
+
+The expected \TP event yields are denoted by $s$, the backgrounds as
+$b$. We also introduce the usual \emph{signal strength modifier} $\mu$.
+The systematic uncertainties described in~\ref{chap:systematics} are
+introduced as nuisance parameters (denoted together as $\theta$) for the number of expected signal and
+background events. They become then functions of these parameters
+$s(\theta)$ and $b(\theta)$.
+
+The systematic error \emph{pdf}s $\rho(\theta | \tilde\theta)$ are taken as
+gaussians. The mean of the gaussian $\tilde \theta$ is the default value of
+the nuisance parameter.
+We then re-interpret these systematic errors \emph{pdf}s as posteriors given
+by imaginary measurements $\tilde \theta$, as in Bayes' theorem (with flat
+$\pi_\theta(\theta)$ priors):
+\begin{equation*}
+    \rho(\theta|\tilde \theta) \sim p(\tilde \theta | \theta)
+    \pi_\theta(\theta)
+\end{equation*}
+This point of view allows to represent all statistical errors in a
+frequentist context: the $p(\tilde \theta|\theta)$ can be used in a sampling
+fashion to construct the test statistics, and to constrain the likelihood of
+the main measurement.
+
+The procedure for the calculation of the observed limit then includes the
+following steps:
+\begin{enumerate}
+    \item We construct the likelihood function with a Poisson
+        distribution:
+        \begin{equation*}
+            \lhood(\text{data} | \mu, \theta) = \dfrac{(\mu s +
+            b)^n}{n!}e^{-\mu s - b} p(\tilde \theta | \theta)
+        \end{equation*}
+        where \emph{data} represents the actual observed event yields, or
+        pseudo-experiments constructed by sampling distributions as
+        discussed below.
+    \item In order to test the compatibility of the data with the background
+        only and signal$+$background hypotheses we build a test statistic
+        $\tilde{q}_\mu$  based on the profile likelihood ratio:
+        \begin{equation*}
+            \tilde{q}_\mu = -2 \log \dfrac{\lhood(\text{data}|\mu,
+            \hat{\theta}_\mu)}{\lhood(\text{data}|\hat{\mu},
+            \hat{\theta})}
+        \end{equation*}
+        With the constraint that $0 \leq \hat\mu \leq \mu$. The $0 \leq
+        \hat\mu$ is obvious, as the signal rate must be positive, while the
+        upper constraint means that fluctuations of the data such that
+        $\hat\mu \geq \mu$ are not considered as evidence against the signal
+        hypothesis.
+        The value of $\hat{\theta}_\mu$ is the conditional maximum
+        likelihood estimator of $\theta$, given $\mu$, while the values
+        $\hat\mu$ and $\hat\theta$ give the global maximum of the
+        likelihood.
+    \item The observed value $\tilde{q}_\mu^{\text{obs}}$ for the $\mu$
+        under test is calculated.
+    \item The values of the nuisance parameters best describing the observed
+        data, \ie maximizing the likelihood, are computed for the background
+        only and signal$+$background hypotheses. We denote these values as
+        $\hat{\theta}_0^{\text{obs}}$ and
+        $\hat{\theta}_{\mu}^{\text{obs}}$ respectively.
+    \item Monte Carlo pseudo-experiments are made to construct
+        \emph{pdf}s $f(\tilde{q}_\mu|\hat{\theta}_{\mu}^{\text{obs}})$ and $f(\tilde{q}_\mu|\hat{\theta}_{0}^{\text{obs}})$ 
+        Note that the buisance parameters are fixed for the purposes of
+        generating these pseudo-datasets, but are allowed to float in fits
+        needed to evaluate the test statistic.
+        This gives good coverage properties~\cite{2006sppp.conf..112C}.
+    \item We calculate two $p$-values for the $b$-only and $s+b$ hypotheses:
+        \begin{align*}
+            1 - p_b &= P(\tilde{q}_\mu \geq \tilde{q}_\mu^{\text{obs}} |
+            b \text{only}) &= \int_{q_{0}^{\text{obs}}}^\infty
+            f(\tilde{q}_\mu|\hat{\theta}_{0}^{\text{obs}}) \mathrm{\,d}
+            \tilde{q}_\mu\\
+            p_\mu &= P(\tilde{q}_\mu \geq \tilde{q}_\mu^{\text{obs}} | s+b)
+            &= \int_{q_{\mu}^{\text{obs}}}^\infty
+            f(\tilde{q}_\mu|\hat{\theta}_{\mu}^{\text{obs}}) \mathrm{\,d}
+            \tilde{q}_\mu
+        \end{align*}
+        and \CLs as the ratio of these two probabilities:
+        \begin{equation*}
+            \CLs = \dfrac{p_\mu}{1 - p_b}
+        \end{equation*}
+    \item If for $\mu = 1$, $\CLs \leq 5\%$, we state that the \TP is
+        excluded with 95\% confidence level.
+        Limits calculated with this \CLs method are known to be
+        conservative, \ie the confidence level is actually higher than 95\%.
+\end{enumerate}
+\section{Calculation of the expected limit}
+In order to calculate the expected limit and the bands corresponding to
+$1$ and $2\sigma$ fluctuations, we generate many background-only
+pseudo-experiments and calculate \CLs as in the observed limit procedure. 
+
+Then, a cumulative probability distribution of results can be plotted, and
+the point at which the distribution crosses the quantile of 50\% is the
+median expected value, to be taken as the expected limit. The $\pm 1\sigma$
+(68\%) is defined by the crossings of the 16\% and 84\% quantiles. Crossings
+at the $2.5\%$ and $97.5\%$ define the $\pm 2\sigma$ band.
+
+\section{Results}
+The event yields from the three decay channels are
+combined when setting the limits.
+The expected and observed limits are shown in
 figure~\ref{fig:limit}.
 The expected limit is~\unit[658]{GeV}, the observed limit
 is~\unit[633]{GeV}.
@@ -22,7 +123,6 @@ is~\unit[633]{GeV}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=.9\textwidth]{images/pdf/oLimit_limit_macro_4jets_opt_btag_200_350_02}
-
     \caption{Observed and expected limits for the production cross sections
     of the top partners.}
     \label{fig:limit}
