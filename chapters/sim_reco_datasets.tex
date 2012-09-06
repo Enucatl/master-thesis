@@ -9,12 +9,13 @@ Simulation}, and a detector model with simplified geometry, response
 evaluation and pattern recognition to decrease the processing time per
 event, the \emph{Fast Simulation}~\cite{fs:fast.simulation}. Both the
 FullSim and the FastSim were employed in the generation of the background
-samples for our studies.
+and signal samples for our studies.
 
-In the FullSim, the energy depositions in the sensitive detector volumes are converted to electronic
+\subsection{The Full Simulation}
+In the FullSim, the energy deposits in the sensitive detector volumes are converted to electronic
 signals using algorithms based on the observed detector behavior, including the simulation of
 electronics noise and cross-talk. In many cases, the simulated electronic parameters are identical to
-those of the real electronics; the constants specifying performance, calibrations, and noise behavior
+those of the real devices; the constants specifying performance, calibrations, and noise behavior
 can be read from the same database used for the reconstruction of the real collision data. The output of
 this stage is simulated data in a format identical to that of the real raw data read from the detector.
 Further processing uses this data to simulate the formation of the L1 and
@@ -22,6 +23,7 @@ HLT decisions using the same algorithms implemented online in the CMS trigger sy
 raw data that is produced is processed in a manner identical to that of the real data from
 LHC collisions.
 
+\subsection{The Fast Simulation}
 The FastSim makes a number of approximations:
 \begin{description}
     \item[CMS geometry:] the FastSim describes the detector with a simplified geometry of nested cilyndrical layers. The particles are propagated from one layer to the next.
@@ -38,7 +40,11 @@ The CMS detector, with its large silicon tracker and its extremely precise elect
 
 Reconsider the design of the detector in figure~\ref{fig:cms_transverse}. The logic you use to
 interpret this diagram is akin to that employed by the PF.
-An ECAL cluster not linked to any track is a photon, an ECAL and HCAL cluster matched to a track gives a charged hadron, while an HCAL cluster without a track identifies a neutral hadron. Electrons are basically ECAL-only clusters linked to a track. Muons are by far the easiest particles to recognize.
+An ECAL cluster not linked to any track is a photon, an ECAL and HCAL
+cluster matched to a track gives a charged hadron, while an HCAL cluster
+without a track identifies a neutral hadron. Electrons are basically
+ECAL-only clusters linked to a track. Muons are recognized from the hits in
+the muon detectors.
 
 From these basic elements, composite objects can be reconstructed, such as
 $\tau$ leptons from their decay products, jets and
@@ -51,6 +57,36 @@ The quality selections are the result of detailed studies by the CMS
 collaboration, aiming for the best compromise between purity and efficiency.
 These recommendations are described in the following paragraphs.
 
+\subsection{Track reconstruction}
+The track reconstruction algorithm proceeds in an iterative fashion. The
+proton-proton interaction region, known as the beamspot, is used as a first
+estimate of the hard interaction point prior to the reconstruction of the
+primary vertex.
+The first step of the algorithm uses pixel hits only. Tracks are seeded from
+either triplets of hits or pairs of hits with an additional constraint from
+the beamspot or a pixel vertex. This first estimate of the trajectory is
+then propagated outwards in a search for compatible hits with the
+combinatorial track finder (CTF)~\cite{ctf}. An additional search for hits
+is performed from the outer boundaries of the detector and propagating
+inwards. Finally, the tracks are fitted and filtered to remove those that
+are likely fakes. Before starting the next iteration of the algorithm, hits
+that were unambiguously assigned to a track are removed from the collection
+to create a smaller, cleaner collection.
+The first iterations usually pick up prompt tracks, while the
+the following iterations find displaced tracks or tracks with missing hits
+in the pixel detector.
+
+\subsection{Vertex reconstruction}
+The reconstruction of the primary vertex starts from the track collection.
+Prompt tracks are selected based on the transverse impact parameter, number
+of hits, and $\chi^2$. They are then clustered, \ie separated into groups
+forming vertex candidates.
+An adaptive vertex fit~\cite{adaptive} is performed to find the point in space that is most
+compatible with the selected tracks.
+
+The track and vertex reconstruction are
+intertwined as the additional information from the position of the vertex is
+then used to re-estimate track momenta and parameters.
 \subsection{Muon reconstruction}
 Muons are not stopped inside the CMS detector and leave only a tiny fraction
 of their energy in the calorimeters. The information from the tracking
@@ -121,7 +157,7 @@ This approach, which is efficient for isolated and high $\pt$ electrons has unfo
 a limited efficiency in jets because the super-cluster collects 
 additional contributions from other particles.
 
-In contrast with this ECAL-driven approach, the strategy developed for the Particle Flow~\cite{pf:electron.reconstruction} starts from
+In addition to this ECAL-driven approach, the strategy developed for the Particle Flow~\cite{pf:electron.reconstruction} starts from
 the tracks and can be explained with two extreme examples. 
 When the \emph{bremsstrahlung} emission is negligible, the electron
 trajectory is determined with good precision by
@@ -366,7 +402,7 @@ the overall reconstruction:
 
 \subsection{Trigger requirements}\label{sec:triggers}
 HLT selections are also used in our analysis. Double lepton triggers are
-employed with a relatively high \pt threshold. The triggers used for the
+employed with a relatively low \pt threshold. The triggers used for the
 three decay channels are listed in table~\ref{tab:triggers}.
 \input{tables/triggers}
 
@@ -418,7 +454,28 @@ table~\ref{tab:background_mc}.
 
 \section{Monte Carlo pile-up weighting}
 The pile-up in events at the LHC is constantly evolving with the increase in
-instantaneous luminosity at which the machine operates. The simulated events
+instantaneous luminosity at which the machine operates
+(figure~\ref{fig:inst_lumi}).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/plu_days_liny}
+
+    \caption{Peak instantaneous luminosity delivered by the LHC in 2011.}
+    \label{fig:inst_lumi}
+\end{figure}
+Pile-up describes events coming from additional proton-proton interactions.
+It is very unlikely to have two hard collisions occurring at the same time,
+but as the luminosity goes up, the density of the protons in the interaction
+region increases as well, thus giving rise to additional soft interactions
+between many proton pairs in the same bunch crossing.
+
+In addition to this effect, known as \emph{in-time} pile-up, we have the
+contributions from \emph{out-of-time} pile-up: the design bunch spacing
+of the LHC is \unit[25]{ns}, faster than the read-out response for some
+sub-detectors. It is therefore possible to wrongly assign particles
+from successive bunch crossings.
+
+The simulated events
 are usually produced before the data are collected, therefore they need
 taking into account the measured pile-up conditions in order to
 avoid a systematic bias, as shown in figure~\ref{fig:pile_up}

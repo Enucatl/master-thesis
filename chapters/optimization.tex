@@ -264,7 +264,7 @@ used to select candidate \TP events: the invariant mass of the jets, the
 $M_R$ and $R$ razor variables. The following selections were chosen to
 optimize the ratio\cite{punzi}:
 \begin{equation*}
-    \dfrac{\varepsilon(t)}{a/2 + \sqrt{B(t)}}
+    F \mathop: = \dfrac{\varepsilon(t)}{a/2 + \sqrt{B(t)}}
 \end{equation*}
 Where $\varepsilon$ is the efficiency of the selection $t$ for the signal,
 $B$ is the number of expected background events, and $a$ is the number of
@@ -272,7 +272,33 @@ sigmas corresponding to a one-sided gaussian test at significance $\alpha =
 95\%$.
 The commonly used $S/\sqrt{B}$ figure is unsuitable for the present search,
 with a very low background, as the expression breaks down for $B\rightarrow
-0$.
+0$. The ratio $F$ is plotted in figures~\ref{fig:opt_had_mass},
+\ref{fig:opt_mr} and~\ref{fig:opt_r}.
+
+\begin{figure}[phtb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/cut_opt_had_mass_optional_btag_4jets_AND_mr200_AND_r02}
+    \caption{Optimization figure $F$ for the invariant mass of the hadronic
+        system. The selection on $M_R > \unit[200]{GeV}$ and $R > 0.2$ are
+    applied. The point where $F$ reaches a maximum is chosen as a cut on this variable.}
+    \label{fig:opt_had_mass}
+\end{figure}
+\begin{figure}[phtb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/cut_opt_mr_optional_btag_4jets_AND_r02_AND_had_mass350}
+    \caption{Optimization figure $F$ for the $M_R$ variable. The selection
+        on $M > \unit[350]{GeV}$ and $R > 0.2$ are
+    applied. The point where $F$ reaches a maximum is chosen as a cut on this variable.}
+    \label{fig:opt_mr}
+\end{figure}
+\begin{figure}[phtb]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/cut_opt_r_optional_btag_4jets_AND_mr200_AND_had_mass350}
+    \caption{Optimization figure $F$ for the $R$ variable. The selection
+        on $M > \unit[350]{GeV}$ and $M_R > \unit[200]{GeV}$ are
+    applied. The point where $F$ reaches a maximum is chosen as a cut on this variable.}
+    \label{fig:opt_r}
+\end{figure}
 
 The final event selection includes:
 \begin{itemize}
