@@ -219,11 +219,25 @@ These are rejected if one of the following occurs:
         usually miss hits in one or more layers.
     \item[Track distance] $< \unit[0.02]{cm}$. An electron coming from a
         conversion has a partner positron track. If an oppositely charged
-        track is found within this distance, the electron is rejected.
+        track is found within this distance, the electron is rejected. The
+        distance is calculated analytically by reconstructing the two
+        helices as shown in figure~\ref{fig:dist}
     \item[$\Delta \cot \theta < 0.02$]. A geometrical variable also related
         to the partner track: $\theta$ is the angle between the two tracks
         in the $yz$ plane.
 \end{description}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/pdf/dist}
+
+    \caption{The track distance for conversion rejection is the two
+    dimensional distance in the $xy$-plane between $B1$ and $B2$. At these
+points, the two tracks from the photon conversion are parallel. The distance
+is defined to be negative if the two tracks overlap, and is positive
+otherwise.}
+    \label{fig:dist}
+\end{figure}
 
 \subsection{Jet reconstruction}\label{sec:jet_reco}
 A quark or gluon produced in the hard scattering process undergoes
@@ -295,7 +309,7 @@ techniques have been developed to identify jets originated by a b quark. In
 this analysis, the \emph{combined secondary
 vertex} algorithm~\cite{CMS-PAS-BTV-09-001} is used. This sophisticated and complex tag exploits all known variables, which can distinguish b from non-b jets. Its goal is to provide optimal b-tag performance, by combining information about impact parameter significance, the secondary vertex and jet kinematics.
 The standard \emph{loose} working point of this algorithm is employed, leading to a
-a probability of a light-flavour jet passing this selection to 10\%,
+a probability of a light-flavour (\ie up, down or strange) jet passing this selection to 10\%,
 as measured on jets with \pt of about \unit[80]{GeV} in QCD Monte Carlo
 events~\cite{CMS-PAS-BTV-11-001}.
 
@@ -347,7 +361,7 @@ and~\ref{fig:hyper_tight_fake_rate}.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.8\textwidth]{images/pdf/hyper_tight_efficiency}
+    \includegraphics[width=\textwidth]{images/pdf/hyper_tight_efficiency}
     \caption{Selection efficiency for the various working points, measured
     in $\Z \rightarrow \E \E$ and $\W \rightarrow \E \Nu$ events. In this
     analysis the \texttt{HyperTightMC1} selection (light blue squares) is used.}
@@ -355,7 +369,7 @@ and~\ref{fig:hyper_tight_fake_rate}.
 \end{figure}
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.8\textwidth]{images/pdf/hyper_tight_fake_rate}
+    \includegraphics[width=\textwidth]{images/pdf/hyper_tight_fake_rate}
     \caption{Selection fake rate for the various working points, measured
     in QCD dijet events. In this
     analysis the \texttt{HyperTightMC1} selection (light blue squares) is used.}
@@ -458,7 +472,7 @@ instantaneous luminosity at which the machine operates
 (figure~\ref{fig:inst_lumi}).
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7\textwidth]{images/pdf/plu_days_liny}
+    \includegraphics[width=\textwidth]{images/pdf/plu_days_liny}
 
     \caption{Peak instantaneous luminosity delivered by the LHC in 2011.}
     \label{fig:inst_lumi}

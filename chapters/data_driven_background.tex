@@ -71,7 +71,14 @@ Non-prompt leptons are the result of the decays of heavy flavour quarks,
 decays in flight or conversions. The description of this background in the
 Monte Carlo samples is unsatisfactory, and a data-driven estimate is needed.
 
-The so called \emph{tight-loose} method is employed. This method defines two
+The so called \emph{tight-loose} method is employed. 
+The goal of this method is to measure the probability of a non-prompt lepton
+passing the analysis selection~(\ref{sec:fake_rate}) and then to calculate the expected number of
+events contaminating our final sample by using this
+probability~(\ref{sec:fake_prediction}).
+
+\subsection{Measuring the tight-to-loose ratio}\label{sec:fake_rate}
+This method defines two
 types of leptons: a \emph{tight} lepton, which is exactly the same as
 in~\ref{sec:muon_selection} and~\ref{sec:electron_selection}, and a
 \emph{loose} lepton, whose selection criteria are relaxed as follows:
@@ -180,8 +187,8 @@ for the contribution of prompt leptons, it becomes nearly independent from
 the \pt (see figure~\ref{fig:CorFRvsLepPt}).
 \begin{figure}[htb]
     \centering
-\includegraphics[width=0.49\textwidth]{images/pdf/h_FR_ElPt} \hfill
-\includegraphics[width=0.49\textwidth]{images/pdf/h_FR_MuPt} \\ 
+\includegraphics[width=0.7\textwidth]{images/pdf/h_FR_ElPt} \\
+\includegraphics[width=0.7\textwidth]{images/pdf/h_FR_MuPt} 
 \caption{The corrected tight-to-loose ratio, loosely speaking the
     \emph{fake rate}, as a function of $\pt$ for electrons (left) and muons (right). The correction is accomplished by subtracting the MC-based 
          $\W$, $\Z$ and $\ttbar$ contributions from the data.}
@@ -330,7 +337,7 @@ For the mixed case of $N_{fp}$, in case both leptons fail, each of them is
 weighted alternatively by $\varepsilon$, the other by $1$, hence the factor
 2. 
 
-Finally these formulae can be extended to the include the situation where an
+Finally these formulae can be extended to include the situation where an
 electron and a muon are part of the same configuration.
 The notation is now $N_{pp}$, $N_{fp}$, $N_{pf}$ and $N_{ff}$, where the
 first subscript refers to the electron, the second one to the muon. The
@@ -412,30 +419,30 @@ and~\ref{fig:masses}) also shows good agreement.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_1_sum_1}
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_2_sum_1}
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_1_sum_1}\\
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_2_sum_1}
     \caption{Expected and observed distributions of the \pt of the leading
-    (left) and subleading (right) jet in events with two same-sign leptons
+    (top) and subleading (bottom) jet in events with two same-sign leptons
 and two jets. The sum of the three decay channels is shown. }
     \label{fig:jet_pt}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_1_sum_1}
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_2_sum_1}
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_1_sum_1}\\
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_2_sum_1}
     \caption{Expected and observed distributions of the \pt of the leading
-    (left) and subleading (right) leptons in events with two same-sign leptons
+    (top) and subleading (bottom) leptons in events with two same-sign leptons
 and two jets. The sum of the three decay channels is shown. }
     \label{fig:lep_pt}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/had_mass_optional_btag_sum_1}
-    \includegraphics[width=.49\textwidth]{images/pdf/same-sign,_2_jets/lep_mass_sum_1}
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/had_mass_optional_btag_sum_1}\\
+    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_mass_sum_1}
     \caption{Expected and observed distributions of the invariant mass of
-        jets (left) and leptons (right) in events with two same-sign leptons
+        jets (top) and leptons (bottom) in events with two same-sign leptons
         and two jets. The sum of the three decay channels is shown. The \emph{optional b-tag} method for calculating the
         invariant mass of the jets is described in~\ref{sec:razor_btagging}.}
     \label{fig:masses}
