@@ -42,7 +42,8 @@ The particle flow~\cite{pf:particle.flow} (PF) event reconstruction aims at reco
 
 The CMS detector, with its large silicon tracker and its extremely precise electromagnetic calorimeter, appears to be ideally suited for this purpose. The fundamental building bricks of the PF reconstruction are charged particle tracks, ECAL and HCAL clusters and muon tracks. These must be delivered with a high efficiency and low fake rate even in high-density environments like jets. A jet is a collection of particles resulting from the decay of a quark or gluon and emitted in the direction of the primary particle. 
 
-Reconsider the design of the detector in figure~\ref{fig:cms_transverse}. The logic you use to
+Reconsidering the design of the detector in figure~\ref{fig:cms_transverse},
+the logic used to
 interpret this diagram is akin to that employed by the PF.
 An ECAL cluster not linked to any track is a photon, an ECAL and HCAL
 cluster matched to a track gives a charged hadron, while an HCAL cluster
@@ -139,11 +140,7 @@ centred on the muon track, as illustrated in figure~\ref{fig:muon_isolation}.
 \end{figure}
 
 \subsection{Electron reconstruction}\label{sec:electron_reco}
-The tracks in CMS are reconstructed assuming that the particle is a muon.
-Coulomb scattering is the dominant effect on muons crossing material and its
-impact is modelled by gaussian fluctuations. This approach fails with
-electrons because of the highly non-gaussian \emph{bremsstrahlung} emission. A
-customized track reconstruction was developed for electrons, where the hits
+A customized track reconstruction was developed for electrons, where the hits
 are fitted using a \emph{gaussian sum filter} (GSF)~\cite{pf:gsf.tracks},
 \ie the \emph{bremsstrahlung} emission is modelled by a superposition of
 gaussian functions. However, this more sophisticated analysis demands more CPU power, at the order of a few hundreds milliseconds per track, and can be run only on a limited number of seeds.
@@ -256,7 +253,8 @@ However there can be difficulties in collecting all the particles in a jet:
     \item particles could be generated with a large momentum relative to the
         original parton direction, leading to the particle not being counted
         in the jet
-    \item pile-up and initial state radiation may contribute with additional
+    \item initial state radiation and particles from additional soft
+        proton-proton interactions may contribute with additional
         tracks 
 \end{itemize}
 The anti-$k_T$ algorithm~\cite{antikt} is used for the jet reconstruction. In this
@@ -320,7 +318,7 @@ events~\cite{CMS-PAS-BTV-11-001}.
 
 \section{Object selection}
 Signal events in our studies have a clean signature: two clean, isolated,
-same-sign leptons and many jets. To reduce the probability of pions and
+same-sign leptons and many jets (see figure~\ref{fig:TTbar_feynman}). To reduce the probability of pions and
 other objects of being wrongly identified as leptons further quality
 requirements are enforced.
 \subsection{Muon selection}\label{sec:muon_selection}
