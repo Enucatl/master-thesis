@@ -1,8 +1,6 @@
 \chapter{A data-driven background estimate}\label{chap:data_driven}
-We identified three sources of backgrounds
-(page~\pageref{page:background_categories}). The backgrounds from charge
-misidentification and from non-prompt leptons are analysed with data driven
-techniques.
+In this chapter the data-driven method for estimating the backgrounds from charge
+misidentification and from non-prompt leptons is described.
 \section{Charge misidentification}\label{sec:charge_misid}
 Standard Model processes with prompt leptons of opposite charge are very
 common at the LHC. They can contribute to the top partners background if the
@@ -131,7 +129,7 @@ and the \Z veto now includes all the jets, as a second lepton can be incorrectly
 identified as a jet.
 
 Even with this selection, the contamination from prompt leptons is still
-fairly large. This can be estimated from the Monte Carlo $\Wjets$ and
+significant, especially in the muon case. This can be estimated from the Monte Carlo $\Wjets$ and
 $\Zjets$ samples. The results are shown in
 tables~\ref{tab:FRwMCEl} and~\ref{tab:FRwMCMu}.
 \begin{table}[htb]
@@ -362,7 +360,7 @@ now familiar technique:
     N_{ff}^\text{pass} &= \varepsilon_\E \varepsilon_\M N_{t00}
 \end{align*}
 
-\subsection{Closure tests}\label{sec:closure}
+\subsection{Validation on test samples}\label{sec:closure}
 In order to make sure that the method applied for the non-prompt leptonic
 background estimate is sound we have tested it on independent Monte Carlo
 samples. The MC generator information provides the real non-prompt
@@ -377,7 +375,8 @@ in QCD samples, without the selections on the
     f_{\M} &= 0.152 \pm 0.002
 \end{align*}
 These numbers differ from the values in the data since the MC does not
-describe accurately the composition of the non-prompt events.
+describe accurately the composition of the non-prompt events. The main
+bias is introduced by the filters at the generator level.
 
 Monte Carlo events are selected with two same-sign leptons, discarding
 events where both leptons are actually prompt, \ie the decay
@@ -419,8 +418,8 @@ and~\ref{fig:masses}) also shows good agreement.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_1_sum_1}\\
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_2_sum_1}
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_1_sum_1}\\
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/jet_pt_2_sum_1}
     \caption{Expected and observed distributions of the \pt of the leading
     (top) and subleading (bottom) jet in events with two same-sign leptons
 and two jets. The sum of the three decay channels is shown. }
@@ -429,8 +428,8 @@ and two jets. The sum of the three decay channels is shown. }
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_1_sum_1}\\
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_2_sum_1}
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_1_sum_1}\\
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/lep_pt_2_sum_1}
     \caption{Expected and observed distributions of the \pt of the leading
     (top) and subleading (bottom) leptons in events with two same-sign leptons
 and two jets. The sum of the three decay channels is shown. }
@@ -439,8 +438,8 @@ and two jets. The sum of the three decay channels is shown. }
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/had_mass_optional_btag_sum_1}\\
-    \includegraphics[width=.7\textwidth]{images/pdf/same-sign,_2_jets/lep_mass_sum_1}
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/had_mass_optional_btag_sum_1}\\
+    \includegraphics[width=.8\textwidth]{images/pdf/same-sign,_2_jets/lep_mass_sum_1}
     \caption{Expected and observed distributions of the invariant mass of
         jets (top) and leptons (bottom) in events with two same-sign leptons
         and two jets. The sum of the three decay channels is shown. The \emph{optional b-tag} method for calculating the

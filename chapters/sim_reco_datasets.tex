@@ -1,18 +1,18 @@
 \chapter{Simulation, reconstruction and datasets}
 \section{Simulation}\label{sec:fast_sim}
 Accurate Monte Carlo simulations are needed in order to make sense of the
-data and search for new physics phenomena. The physics of the collisions is
+data and model the behaviour of new physics signals in the detector. The physics of the collisions is
 simulated by the event generators MadGraph~\cite{madgraph} and PYTHIA~\cite{fs:pythia}. Then, the propagation of the particles in the detector has to be worked out.
 Two different types of simulation are used by the CMS collaboration: a
 GEANT4-based~\cite{fs:geant} simulation, known as the \emph{Full
 Simulation}, and a detector model with simplified geometry, response
 evaluation and pattern recognition to decrease the processing time per
 event, the \emph{Fast Simulation}~\cite{fs:fast.simulation}. Both the
-FullSim and the FastSim were employed in the generation of the background
+GEANT-based simulation and the Fast Simulation were employed in the generation of the background
 and signal samples for our studies.
 
 \subsection{The Full Simulation}
-In the FullSim, the energy deposits in the sensitive detector volumes are converted to electronic
+In the GEANT-based simulation, the energy deposits in the sensitive detector volumes are converted to electronic
 signals using algorithms based on the observed detector behavior, including the simulation of
 electronics noise and cross-talk. In many cases, the simulated electronic parameters are identical to
 those of the real devices; the constants specifying performance, calibrations, and noise behavior
@@ -24,13 +24,17 @@ raw data that is produced is processed in a manner identical to that of the real
 LHC collisions.
 
 \subsection{The Fast Simulation}
-The FastSim makes a number of approximations:
+This other approach makes a number of approximations:
 \begin{description}
-    \item[CMS geometry:] the FastSim describes the detector with a simplified geometry of nested cilyndrical layers. The particles are propagated from one layer to the next.
+    \item[CMS geometry:] the Fast Simulation describes the detector with a simplified geometry of nested cilyndrical layers. The particles are propagated from one layer to the next.
     \item[Material effects:] five effects are taken into account. These are \emph{bremsstrahlung}, photon conversion, multiple Coulomb scattering, energy loss through ionization and nuclear interactions. All of these are calculated analytically, except for nuclear interactions, since no analytical description is sufficient to describe the effect. Cross sections are taken from the PDG and the kinematics are derived from single particle collisions saved beforehand.
-    \item[Track reconstruction:] the reconstruction is not usually part of the simulation. The FastSim includes it because, given the low fake rate in the reconstruction, it is possible to emulate it at a lower computational cost. Only the hits of the simulated track are used to make a track candidate. 
+    \item[Track reconstruction:] the reconstruction is not usually part of
+        the simulation. In particular, the track reconstruction is very time
+        consuming. The hits of  the simulated track are used to make a track
+        candidate, but no fake tracks are simulated. This is possibile
+        because of the very low fake rate.
     \item[Muons:] muons are propagated through the tracker and calorimeters with average energy loss, then $dE/dx$ and multiple scattering in the iron yokes of the muon chambers are computed. Muon simulated hits are produced in all sections of the muon systems.
-    \item[Calorimeters:] electron showers in the ECAL are simulated with the Grindhammer~\cite{fs:grindhammer} parametrization. Photons undergo pair conversions based on the number of radiation lengths they have traversed. Detector effects such as energy leakage into the crystal gaps and into the HCAL are included, as well as electronic noise. Shower simulation in the HCAL is similar, with different types of particles parametrized from FullSim results.
+    \item[Calorimeters:] electron showers in the ECAL are simulated with the Grindhammer~\cite{fs:grindhammer} parametrization. Photons undergo pair conversions based on the number of radiation lengths they have traversed. Detector effects such as energy leakage into the crystal gaps and into the HCAL are included, as well as electronic noise. Shower simulation in the HCAL is similar, with different types of particles parametrized from GEANT-based simulation results.
 \end{description}
 
 \section{The reconstruction of physics objects}
@@ -74,7 +78,8 @@ that were unambiguously assigned to a track are removed from the collection
 to create a smaller, cleaner collection.
 The first iterations usually pick up prompt tracks, while the
 the following iterations find displaced tracks or tracks with missing hits
-in the pixel detector.
+in the pixel detector, allowing the reconstruction of conversions or nuclear
+interactions.
 
 \subsection{Vertex reconstruction}
 The reconstruction of the primary vertex starts from the track collection.
@@ -466,7 +471,7 @@ table~\ref{tab:background_mc}.
 
 \input{tables/background_mc}
 
-\section{Monte Carlo pile-up weighting}
+\section{Monte Carlo pile-up reweighting}
 The pile-up in events at the LHC is constantly evolving with the increase in
 instantaneous luminosity at which the machine operates
 (figure~\ref{fig:inst_lumi}).
@@ -486,11 +491,14 @@ between many proton pairs in the same bunch crossing.
 In addition to this effect, known as \emph{in-time} pile-up, we have the
 contributions from \emph{out-of-time} pile-up: the design bunch spacing
 of the LHC is \unit[25]{ns}, faster than the read-out response for some
-sub-detectors. It is therefore possible to wrongly assign particles
-from successive bunch crossings.
+sub-detectors. It is therefore possible that the signals from particles
+generated in previous collisions are integrated.
+electronics from successive bunch crossings.
 
 The simulated events
-are usually produced before the data are collected, therefore they need
+are usually produced before the data are collected, with a choice of the
+pile-up distribution covering the expected condition, based on information
+from the accelerator. Therefore they need
 taking into account the measured pile-up conditions in order to
 avoid a systematic bias, as shown in figure~\ref{fig:pile_up}
 
